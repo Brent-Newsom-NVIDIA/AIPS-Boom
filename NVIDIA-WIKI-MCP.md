@@ -2,6 +2,8 @@
 
 Turn the NVIDIA CUDA wiki into a local source-of-truth tool for Claude and Codex.
 
+Need the shortest path? Use [CLICK-HERE-TO-INSTALL.md](CLICK-HERE-TO-INSTALL.md).
+
 This package runs entirely on your machine. It does not host a server, does not call the internet, and only reads the local `content/` folder from this repo.
 
 ## What You Get

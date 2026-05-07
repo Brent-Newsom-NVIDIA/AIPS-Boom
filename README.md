@@ -28,6 +28,7 @@ The older standalone `NVIDIA WIKI` desktop folder should be treated as a legacy/
 
 Use the local MCP package when you want Claude or Codex to query this wiki as source of truth without uploading files or hosting an internal service.
 
+- Quick install/query card: [CLICK-HERE-TO-INSTALL.md](CLICK-HERE-TO-INSTALL.md)
 - Start here: [NVIDIA-WIKI-MCP.md](NVIDIA-WIKI-MCP.md)
 - Windows one-click installer: `Install-NVIDIA-Wiki-MCP.cmd`
 - Local server: `mcp/nvidia-wiki-mcp.mjs`
