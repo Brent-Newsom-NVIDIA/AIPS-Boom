@@ -32,6 +32,18 @@ The older standalone `NVIDIA WIKI` desktop folder should be treated as a legacy/
 1. Edit markdown directly in `content/`, or open `content/` as the Obsidian vault and work there.
 2. Commit changes in this repo normally, or run `publish.bat` from the repo root to stage, commit, and push the latest content changes.
 
+## Agent access with local MCP
+
+Use the local MCP package when you want Claude or Codex to query this wiki as source of truth without uploading files or hosting an internal service.
+
+- Quick install/query card: [CLICK-HERE-TO-INSTALL.md](CLICK-HERE-TO-INSTALL.md)
+- Start here: [NVIDIA-WIKI-MCP.md](NVIDIA-WIKI-MCP.md)
+- Windows one-click installer: `Install-NVIDIA-Wiki-MCP.cmd`
+- Mac one-click installer: `Install-NVIDIA-Wiki-MCP.command`
+- Local server: `mcp/nvidia-wiki-mcp.mjs`
+
+The MCP server is read-only, local-only, and exposes tools for wiki search, page reads, related-page traversal, and answer-ready context packs.
+
 ## Local preview
 
 ```bash
