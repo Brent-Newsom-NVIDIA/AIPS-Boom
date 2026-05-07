@@ -10,6 +10,14 @@ On Windows, open this repo folder and double-click:
 Install-NVIDIA-Wiki-MCP.cmd
 ```
 
+On Mac, open this repo folder and double-click:
+
+```text
+Install-NVIDIA-Wiki-MCP.command
+```
+
+If Mac asks for confirmation, choose **Open**. If double-click does not work, right-click the file and choose **Open**.
+
 When the installer finishes, restart Claude Desktop, Claude Code, or Codex.
 
 ## 2. Click Here to Query It

@@ -37,6 +37,16 @@ Restart Claude Desktop after install. Restart any open Claude Code or Codex sess
 
 ### macOS / Linux
 
+For Mac, double-click:
+
+```text
+Install-NVIDIA-Wiki-MCP.command
+```
+
+If Mac asks for confirmation, choose **Open**. If double-click does not work, right-click the file and choose **Open**.
+
+You can also run the installer from Terminal:
+
 ```bash
 cd /path/to/nvidia-cuda-wiki
 bash install/install-nvidia-wiki-mcp.sh
