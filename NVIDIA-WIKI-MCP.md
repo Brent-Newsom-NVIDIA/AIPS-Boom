@@ -4,7 +4,7 @@ Turn the NVIDIA CUDA wiki into a local source-of-truth tool for Claude and Codex
 
 Need the shortest path? Use [CLICK-HERE-TO-INSTALL.md](CLICK-HERE-TO-INSTALL.md).
 
-This package runs entirely on your machine. It does not host a server, does not call the internet, and only reads the local `content/` folder from this repo.
+The MCP server runs entirely on your machine. It does not host a network service, does not call the internet, and only reads the local `content/` folder from this repo. The installer may download a portable Node runtime if Node is not already available.
 
 ## What You Get
 
@@ -45,6 +45,12 @@ Install-NVIDIA-Wiki-MCP.command
 
 If Mac asks for confirmation, choose **Open**. If double-click does not work, right-click the file and choose **Open**.
 
+The Mac installer configures Claude Desktop automatically by updating:
+
+```text
+~/Library/Application Support/Claude/claude_desktop_config.json
+```
+
 You can also run the installer from Terminal:
 
 ```bash
@@ -54,7 +60,7 @@ bash install/install-nvidia-wiki-mcp.sh
 
 ## Requirements
 
-- Node.js 18 or newer
+- No manual Node.js install required. If Node is missing, the installer downloads a portable Node runtime into `.mcp-runtime/`.
 - For Codex integration: Codex CLI installed and logged in
 - For Claude Code integration: Claude Code CLI installed and logged in
 - For Claude Desktop integration on Windows: Claude Desktop installed
@@ -163,17 +169,20 @@ Use the NVIDIA Wiki MCP as source of truth. What pages should I read to understa
 
 ## Claude Desktop Usage
 
-After running the Windows installer:
+After running the installer:
 
-1. Restart Claude Desktop.
-2. Open a new chat.
-3. Ask the first test question above.
+1. Fully quit Claude Desktop.
+2. Reopen Claude Desktop.
+3. Open a new chat.
+4. Ask the first test question above.
 
 If Claude does not use the tool automatically, use stronger wording:
 
 ```text
 Use your nvidia-wiki MCP tools. Search the NVIDIA wiki first, then answer from the wiki only.
 ```
+
+If Claude says it cannot find the MCP in a registry, you are probably using Claude in a browser or Claude Desktop has not loaded the local MCP config yet. Use the Claude Desktop app, fully quit and reopen it, then try again.
 
 ## Manual Server Test
 
@@ -183,6 +192,8 @@ From the repo root:
 node mcp/nvidia-wiki-mcp.mjs --status
 node mcp/nvidia-wiki-mcp.mjs --self-test "retail loss prevention"
 ```
+
+If the installer downloaded portable Node, use the `Node path:` printed by the installer in place of `node`.
 
 ## Updating the Wiki
 
@@ -200,7 +211,8 @@ If the repo path changed, rerun the installer.
 
 - Read-only
 - Local filesystem only
-- No external network calls
+- No external network calls from the MCP server
+- The installer may download portable Node.js from `nodejs.org` if Node 18+ is not already installed
 - No write tools
 - No secrets required
 - Reports the git commit hash in tool output so answers can be tied back to a repo state
@@ -209,7 +221,7 @@ If the repo path changed, rerun the installer.
 
 If tools do not appear:
 
-1. Confirm Node works:
+1. Confirm Node works. Use the `Node path:` printed by the installer if portable Node was downloaded:
 
 ```bash
 node --version

@@ -45,6 +45,80 @@ function Backup-File($Path) {
   }
 }
 
+function Get-NodeMajor($NodePath) {
+  try {
+    $major = & $NodePath -p "Number(process.versions.node.split('.')[0])" 2>$null
+    return [int]$major
+  } catch {
+    return 0
+  }
+}
+
+function Test-NodeUsable($NodePath) {
+  return $NodePath -and (Test-Path $NodePath) -and ((Get-NodeMajor $NodePath) -ge 18)
+}
+
+function Get-PortableNodePlatform {
+  if ($env:PROCESSOR_ARCHITECTURE -eq "ARM64" -or $env:PROCESSOR_ARCHITEW6432 -eq "ARM64") {
+    return "win-arm64"
+  }
+  return "win-x64"
+}
+
+function Install-PortableNode($RepoRoot, $NodeVersion) {
+  $platform = Get-PortableNodePlatform
+  $runtimeRoot = Join-Path $RepoRoot ".mcp-runtime"
+  $nodeDir = Join-Path $runtimeRoot "node-v$NodeVersion-$platform"
+  $nodeExe = Join-Path $nodeDir "node.exe"
+
+  if (Test-NodeUsable $nodeExe) {
+    return $nodeExe
+  }
+
+  $downloads = Join-Path $runtimeRoot "downloads"
+  New-Item -ItemType Directory -Force -Path $downloads | Out-Null
+  $archive = Join-Path $downloads "node-v$NodeVersion-$platform.zip"
+  $url = "https://nodejs.org/dist/v$NodeVersion/node-v$NodeVersion-$platform.zip"
+
+  Write-Host "Node.js 18+ was not found. Downloading portable Node $NodeVersion..."
+  $downloaded = $false
+  $ProgressPreference = "SilentlyContinue"
+  for ($attempt = 1; $attempt -le 3; $attempt++) {
+    try {
+      Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $archive
+      $downloaded = $true
+      break
+    } catch {
+      Write-Warning "Download attempt $attempt failed: $($_.Exception.Message)"
+      if ($attempt -lt 3) {
+        Start-Sleep -Seconds 2
+      }
+    }
+  }
+
+  if (!$downloaded) {
+    throw "Could not download portable Node from $url. Install Node.js 18+ from https://nodejs.org/en/download or NVIDIA Self Service, then rerun this installer."
+  }
+
+  Expand-Archive -Path $archive -DestinationPath $runtimeRoot -Force
+
+  if (!(Test-NodeUsable $nodeExe)) {
+    throw "Portable Node install failed: $nodeExe"
+  }
+
+  return $nodeExe
+}
+
+function Resolve-NodeCommand($RepoRoot) {
+  $NodeVersion = "22.16.0"
+  $nodeCommand = Get-Command "node" -ErrorAction SilentlyContinue
+  if ($nodeCommand -and ((Get-NodeMajor $nodeCommand.Source) -ge 18)) {
+    return $nodeCommand.Source
+  }
+
+  return Install-PortableNode $RepoRoot $NodeVersion
+}
+
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $ServerPath = Join-Path $RepoRoot "mcp\nvidia-wiki-mcp.mjs"
 $ServerName = "nvidia-wiki"
@@ -57,12 +131,10 @@ if (!(Test-Path $ServerPath)) {
   throw "MCP server not found: $ServerPath"
 }
 
-if (!(Test-Command "node")) {
-  throw "Node.js was not found. Install Node.js 18+ from the NVIDIA software center or nodejs.org, then rerun this installer."
-}
-
-$nodeVersion = (& node --version).Trim()
+$NodeCmd = Resolve-NodeCommand $RepoRoot
+$nodeVersion = (& $NodeCmd --version).Trim()
 Write-Host "Node: $nodeVersion"
+Write-Host "Node path: $NodeCmd"
 
 if (!$SkipGitPull -and (Test-Path (Join-Path $RepoRoot ".git")) -and (Test-Command "git")) {
   Write-Section "Updating local repo"
@@ -75,7 +147,7 @@ if (!$SkipGitPull -and (Test-Path (Join-Path $RepoRoot ".git")) -and (Test-Comma
 }
 
 Write-Section "Testing MCP server"
-& node $ServerPath --repo $RepoRoot --status
+& $NodeCmd $ServerPath --repo $RepoRoot --status
 Write-Host "Server status check passed."
 
 if (!$SkipClaudeDesktop) {
@@ -91,8 +163,8 @@ if (!$SkipClaudeDesktop) {
   }
 
   $serverConfig = [ordered]@{
-    command = "cmd"
-    args = @("/c", "node", "$ServerPath", "--repo", "$RepoRoot")
+    command = "$NodeCmd"
+    args = @("$ServerPath", "--repo", "$RepoRoot")
   }
 
   Ensure-Property $config.mcpServers $ServerName ([pscustomobject]$serverConfig)
@@ -108,7 +180,7 @@ if (!$SkipClaudeCode) {
       & claude mcp remove --scope user $ServerName 2>$null | Out-Null
     } catch {
     }
-    & claude mcp add --scope user $ServerName -- cmd /c node "$ServerPath" --repo "$RepoRoot"
+    & claude mcp add --scope user $ServerName -- "$NodeCmd" "$ServerPath" --repo "$RepoRoot"
     Write-Host "Claude Code MCP configured. Check with: claude mcp list"
   } else {
     Write-Warning "Claude Code CLI was not found. Skipping Claude Code setup."
@@ -122,7 +194,7 @@ if (!$SkipCodex) {
       & codex mcp remove $ServerName 2>$null | Out-Null
     } catch {
     }
-    & codex mcp add $ServerName -- cmd /c node "$ServerPath" --repo "$RepoRoot"
+    & codex mcp add $ServerName -- "$NodeCmd" "$ServerPath" --repo "$RepoRoot"
     Write-Host "Codex MCP configured. Check with: codex mcp list"
   } else {
     Write-Warning "Codex CLI was not found. Skipping Codex setup."
