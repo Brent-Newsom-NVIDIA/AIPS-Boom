@@ -45,6 +45,12 @@ Install-NVIDIA-Wiki-MCP.command
 
 If Mac asks for confirmation, choose **Open**. If double-click does not work, right-click the file and choose **Open**.
 
+The Mac installer configures Claude Desktop automatically by updating:
+
+```text
+~/Library/Application Support/Claude/claude_desktop_config.json
+```
+
 You can also run the installer from Terminal:
 
 ```bash
@@ -174,6 +180,8 @@ If Claude does not use the tool automatically, use stronger wording:
 ```text
 Use your nvidia-wiki MCP tools. Search the NVIDIA wiki first, then answer from the wiki only.
 ```
+
+If Claude says it cannot find the MCP in a registry, you are probably using Claude in a browser or Claude Desktop has not loaded the local MCP config yet. Use the Claude Desktop app, fully quit and reopen it, then try again.
 
 ## Manual Server Test
 

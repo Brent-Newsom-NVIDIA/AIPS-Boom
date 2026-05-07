@@ -20,6 +20,8 @@ If Mac asks for confirmation, choose **Open**. If double-click does not work, ri
 
 When the installer finishes, restart Claude Desktop, Claude Code, or Codex.
 
+Important: local MCP works in Claude Desktop, Claude Code, and Codex. It will not attach to a normal Claude browser tab unless that browser session has its own connector support.
+
 ## 2. Click Here to Query It
 
 Open Claude or Codex and paste this:

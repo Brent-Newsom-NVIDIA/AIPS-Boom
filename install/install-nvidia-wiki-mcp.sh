@@ -25,6 +25,43 @@ echo
 echo "Testing MCP server..."
 node "$server_path" --repo "$repo_root" --status
 
+if [ "$(uname -s)" = "Darwin" ]; then
+  echo
+  echo "Configuring Claude Desktop for macOS..."
+  export NVIDIA_WIKI_MCP_REPO_ROOT="$repo_root"
+  export NVIDIA_WIKI_MCP_SERVER_PATH="$server_path"
+  export NVIDIA_WIKI_MCP_SERVER_NAME="$server_name"
+  node <<'NODE'
+const fs = require("node:fs")
+const os = require("node:os")
+const path = require("node:path")
+
+const repoRoot = process.env.NVIDIA_WIKI_MCP_REPO_ROOT
+const serverPath = process.env.NVIDIA_WIKI_MCP_SERVER_PATH
+const serverName = process.env.NVIDIA_WIKI_MCP_SERVER_NAME
+const configDir = path.join(os.homedir(), "Library", "Application Support", "Claude")
+const configPath = path.join(configDir, "claude_desktop_config.json")
+
+fs.mkdirSync(configDir, { recursive: true })
+
+let config = {}
+if (fs.existsSync(configPath)) {
+  const raw = fs.readFileSync(configPath, "utf8").trim()
+  if (raw) config = JSON.parse(raw)
+}
+
+config.mcpServers ??= {}
+config.mcpServers[serverName] = {
+  command: "node",
+  args: [serverPath, "--repo", repoRoot],
+}
+
+fs.writeFileSync(configPath, `${JSON.stringify(config, null, 2)}\n`)
+console.log(`Claude Desktop config updated: ${configPath}`)
+NODE
+  echo "Restart Claude Desktop before using the wiki tools."
+fi
+
 if command -v claude >/dev/null 2>&1; then
   echo
   echo "Configuring Claude Code..."
@@ -45,10 +82,6 @@ else
   echo "Codex CLI not found; skipping Codex setup."
 fi
 
-echo
-echo "Claude Desktop users on macOS can add this server manually if needed:"
-echo "  command: node"
-echo "  args: $server_path --repo $repo_root"
 echo
 echo "Try this in Claude or Codex:"
 echo "Use the NVIDIA Wiki MCP. I have a retail customer that wants to reduce losses in their stores. What is the best way to do this?"
