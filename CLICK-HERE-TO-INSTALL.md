@@ -18,7 +18,9 @@ Install-NVIDIA-Wiki-MCP.command
 
 If Mac asks for confirmation, choose **Open**. If double-click does not work, right-click the file and choose **Open**.
 
-When the installer finishes, restart Claude Desktop, Claude Code, or Codex.
+When the installer finishes, fully quit and reopen Claude Desktop, Claude Code, or Codex. The installer writes the Claude Desktop MCP config for you.
+
+You do not need to install Node.js first. If Node is missing, the installer downloads a portable Node runtime into this repo folder and uses that automatically.
 
 Important: local MCP works in Claude Desktop, Claude Code, and Codex. It will not attach to a normal Claude browser tab unless that browser session has its own connector support.
 
@@ -87,6 +89,20 @@ From this repo folder, run:
 node mcp\nvidia-wiki-mcp.mjs --status
 ```
 
+If Node was downloaded by the one-click installer, use the `Node path:` printed by the installer. Common examples:
+
+Windows:
+
+```powershell
+.mcp-runtime\node-v22.16.0-win-x64\node.exe mcp\nvidia-wiki-mcp.mjs --status
+```
+
+Mac:
+
+```bash
+.mcp-runtime/node-v22.16.0-darwin-arm64/bin/node mcp/nvidia-wiki-mcp.mjs --status
+```
+
 Then check the app registration:
 
 ```powershell
@@ -101,3 +117,5 @@ Install-NVIDIA-Wiki-MCP.cmd
 ```
 
 Full details are in [NVIDIA-WIKI-MCP.md](NVIDIA-WIKI-MCP.md).
+
+If Claude says it cannot find the MCP in a registry, open the Claude Desktop app instead of Claude in a browser, fully quit and reopen Claude Desktop, and ask again.
