@@ -30,30 +30,60 @@ function Test-FilePath($Label, $Path) {
   }
 }
 
+function Get-ClaudeConfigPaths {
+  $paths = New-Object System.Collections.Generic.List[string]
+  $paths.Add((Join-Path (Join-Path $env:APPDATA "Claude") "claude_desktop_config.json"))
+
+  $packagesRoot = Join-Path $env:LOCALAPPDATA "Packages"
+  if (Test-Path $packagesRoot) {
+    Get-ChildItem -Path $packagesRoot -Directory -Filter "Claude_*" -ErrorAction SilentlyContinue | ForEach-Object {
+      $paths.Add((Join-Path $_.FullName "LocalCache\Roaming\Claude\claude_desktop_config.json"))
+    }
+  }
+
+  return @($paths | Select-Object -Unique)
+}
+
+function Read-ClaudeServerConfig($Path, $ServerName) {
+  if (!(Test-Path $Path)) {
+    return $null
+  }
+
+  $config = Read-JsonFile $Path
+  if (!($config.PSObject.Properties.Name -contains "mcpServers") -or $null -eq $config.mcpServers) {
+    return $null
+  }
+
+  if (!($config.mcpServers.PSObject.Properties.Name -contains $ServerName)) {
+    return $null
+  }
+
+  return $config.mcpServers.$ServerName
+}
+
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
-$ClaudeConfig = Join-Path (Join-Path $env:APPDATA "Claude") "claude_desktop_config.json"
 $ServerName = "nvidia-wiki"
 
 Write-Host "NVIDIA Wiki MCP Checker" -ForegroundColor Green
 Write-Host "Repo: $RepoRoot"
 
 Write-Section "Checking Claude Desktop config"
-Test-FilePath "Claude Desktop config" $ClaudeConfig
-
-$config = Read-JsonFile $ClaudeConfig
-if (!($config.PSObject.Properties.Name -contains "mcpServers") -or $null -eq $config.mcpServers) {
-  throw "Claude config has no mcpServers block. Rerun Install-NVIDIA-Wiki-MCP.cmd."
+foreach ($ClaudeConfig in Get-ClaudeConfigPaths) {
+  Test-FilePath "Claude Desktop config" $ClaudeConfig
+  $candidate = Read-ClaudeServerConfig $ClaudeConfig $ServerName
+  if ($null -ne $candidate) {
+    $server = $candidate
+    Write-Host "OK: Found $ServerName in $ClaudeConfig" -ForegroundColor Green
+  }
 }
 
-if (!($config.mcpServers.PSObject.Properties.Name -contains $ServerName)) {
-  throw "Claude config has no $ServerName server. Rerun Install-NVIDIA-Wiki-MCP.cmd."
+if ($null -eq $server) {
+  throw "Could not find $ServerName in any Claude Desktop config path. Rerun Install-NVIDIA-Wiki-MCP.cmd, or install NVIDIA-Wiki-MCP.mcpb from Claude Desktop Settings > Extensions."
 }
 
-$server = $config.mcpServers.$ServerName
 $command = [string]$server.command
 $argsList = @($server.args | ForEach-Object { [string]$_ })
 
-Write-Host "OK: Found $ServerName in Claude config." -ForegroundColor Green
 Write-Host "Command: $command"
 Write-Host "Args: $($argsList -join ' ')"
 

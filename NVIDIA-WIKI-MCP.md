@@ -264,4 +264,6 @@ codex mcp list
 
 On Windows, double-click `Check-NVIDIA-Wiki-MCP.cmd` to verify that Claude Desktop's config points to the local MCP server and that the server runs from that config.
 
+The Windows installer writes the MCP registration to the standard Claude Desktop config under `%APPDATA%\Claude\claude_desktop_config.json`. If it finds a Store/MSIX-style Claude package under `%LOCALAPPDATA%\Packages\Claude_*`, it also writes the matching sandboxed Claude config there.
+
 If Claude Desktop still does not show or use the tools after the checker passes, confirm you are using the Claude Desktop app, not `claude.ai` or Cowork. Local MCP servers configured through `claude_desktop_config.json` are a Claude Desktop local mechanism, and some enterprise policies can disable local developer MCP servers.

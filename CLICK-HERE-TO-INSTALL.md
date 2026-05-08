@@ -142,6 +142,8 @@ Check-NVIDIA-Wiki-MCP.cmd
 
 It confirms Claude Desktop's config points to the local wiki MCP and runs the MCP status check from that config.
 
+On Windows, the installer checks both the normal Claude Desktop config path and Store/MSIX-style Claude package paths.
+
 Full details are in [NVIDIA-WIKI-MCP.md](NVIDIA-WIKI-MCP.md).
 
 If Claude says it cannot find the MCP in a registry, open the Claude Desktop app instead of Claude in a browser, fully quit and reopen Claude Desktop, and ask again.
