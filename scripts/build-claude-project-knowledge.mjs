@@ -32,7 +32,7 @@ const files = fs
   .sort((a, b) => a.localeCompare(b))
 
 const lines = [
-  "# NVIDIA Wiki Project Knowledge",
+  "# AIPS BOOM NVIDIA Wiki Project Knowledge",
   "",
   `Generated from repo commit: ${commit()}`,
   `Generated page count: ${files.length}`,

@@ -1,6 +1,6 @@
-# Click Here to Install the NVIDIA Wiki Agent
+# Click Here to Install the AIPS BOOM NVIDIA Wiki Agent
 
-This turns the NVIDIA CUDA wiki into a local source-of-truth tool for Claude and Codex.
+This turns the AIPS BOOM NVIDIA CUDA wiki into a local source-of-truth tool for Claude and Codex.
 
 ## Simplest Fallback: Claude Project
 

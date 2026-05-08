@@ -1,6 +1,6 @@
-# NVIDIA Wiki Project Knowledge
+# AIPS BOOM NVIDIA Wiki Project Knowledge
 
-Generated from repo commit: 7ca8ed715866
+Generated from repo commit: 1d2c7289380b
 Generated page count: 492
 
 This generated file is intended for Claude Project Knowledge.
@@ -19,7 +19,9 @@ Source-of-truth rules:
 
 Source path: content/index.md
 
-# NVIDIA Wiki — Master Index
+# AIPS BOOM — NVIDIA CUDA Wiki
+
+*A connected NVIDIA software, CUDA library, hardware, and model knowledge graph for mapping customer needs to NVIDIA technology.*
 
 *Last updated: 2026-04-30*
 *Total pages: 492*

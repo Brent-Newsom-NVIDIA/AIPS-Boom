@@ -1,4 +1,4 @@
-# Claude Project Setup
+# AIPS BOOM Claude Project Setup
 
 Use this when local MCP is blocked or does not load in Claude Desktop.
 
@@ -10,7 +10,7 @@ This path does not require Node.js, command-line tools, MCP connectors, or deskt
 2. Right-click the ZIP and choose **Extract All**.
 3. Open Claude.
 4. Go to **Projects**.
-5. Create a new project named `NVIDIA Wiki`.
+5. Create a new project named `AIPS BOOM`.
 6. Open `claude-project/PROJECT-INSTRUCTIONS-COPY-PASTE.md`.
 7. Copy all text from that file.
 8. Paste it into the Claude Project's **Project instructions** and save.

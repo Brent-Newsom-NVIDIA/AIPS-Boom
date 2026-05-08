@@ -1,6 +1,6 @@
-# NVIDIA Wiki MCP
+# AIPS BOOM NVIDIA Wiki MCP
 
-Turn the NVIDIA CUDA wiki into a local source-of-truth tool for Claude and Codex.
+Turn the AIPS BOOM NVIDIA CUDA wiki into a local source-of-truth tool for Claude and Codex.
 
 Need the shortest path? Use [CLICK-HERE-TO-INSTALL.md](CLICK-HERE-TO-INSTALL.md).
 

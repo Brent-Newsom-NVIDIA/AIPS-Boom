@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "NVIDIA CUDA Knowledge Base",
+    pageTitle: "AIPS BOOM",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,

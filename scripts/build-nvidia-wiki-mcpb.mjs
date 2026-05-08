@@ -13,7 +13,7 @@ const manifest = {
   manifest_version: "0.2",
   name: "nvidia-wiki",
   version: "0.2.0",
-  description: "Local NVIDIA CUDA wiki source-of-truth tools for Claude Desktop.",
+  description: "Local AIPS BOOM NVIDIA CUDA wiki source-of-truth tools for Claude Desktop.",
   author: { name: "NVIDIA Wiki Maintainers" },
   server: {
     type: "node",

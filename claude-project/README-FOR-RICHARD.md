@@ -1,4 +1,4 @@
-# NVIDIA Wiki Claude Project Setup
+# AIPS BOOM Claude Project Setup
 
 This is the non-MCP fallback. It uses Claude Projects and Project Knowledge instead of a local MCP connector.
 
@@ -11,7 +11,7 @@ This is the non-MCP fallback. It uses Claude Projects and Project Knowledge inst
 5. Create a new project named:
 
 ```text
-NVIDIA Wiki
+AIPS BOOM
 ```
 
 6. Open `claude-project/PROJECT-INSTRUCTIONS-COPY-PASTE.md`.
