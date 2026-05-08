@@ -1,6 +1,6 @@
-# NVIDIA CUDA Knowledge Base
+# AIPS BOOM
 
-A Quartz 4 static site backed by a curated, interlinked markdown knowledge base covering NVIDIA's public CUDA platform, libraries, hardware, and ecosystem tooling.
+A Quartz 4 static site backed by a curated, interlinked markdown knowledge base covering NVIDIA's public CUDA platform, libraries, hardware, models, and ecosystem tooling.
 
 ## Quick links
 
