@@ -45,6 +45,46 @@ function Backup-File($Path) {
   }
 }
 
+function Write-JsonFile($Path, $Object) {
+  $json = $Object | ConvertTo-Json -Depth 10
+  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+  [System.IO.File]::WriteAllText($Path, "$json`n", $utf8NoBom)
+}
+
+function Get-ClaudeConfigPaths {
+  $paths = New-Object System.Collections.Generic.List[string]
+  $paths.Add((Join-Path (Join-Path $env:APPDATA "Claude") "claude_desktop_config.json"))
+
+  $packagesRoot = Join-Path $env:LOCALAPPDATA "Packages"
+  if (Test-Path $packagesRoot) {
+    Get-ChildItem -Path $packagesRoot -Directory -Filter "Claude_*" -ErrorAction SilentlyContinue | ForEach-Object {
+      $paths.Add((Join-Path $_.FullName "LocalCache\Roaming\Claude\claude_desktop_config.json"))
+    }
+  }
+
+  return @($paths | Select-Object -Unique)
+}
+
+function Update-ClaudeConfig($ClaudeConfig, $ServerName, $NodeCmd, $ServerPath, $RepoRoot) {
+  $ClaudeDir = Split-Path -Parent $ClaudeConfig
+  New-Item -ItemType Directory -Force -Path $ClaudeDir | Out-Null
+  Backup-File $ClaudeConfig
+
+  $config = Read-JsonFile $ClaudeConfig
+  if (!($config.PSObject.Properties.Name -contains "mcpServers") -or $null -eq $config.mcpServers) {
+    Ensure-Property $config "mcpServers" ([pscustomobject]@{})
+  }
+
+  $serverConfig = [ordered]@{
+    command = "$NodeCmd"
+    args = @("$ServerPath", "--repo", "$RepoRoot")
+  }
+
+  Ensure-Property $config.mcpServers $ServerName ([pscustomobject]$serverConfig)
+  Write-JsonFile $ClaudeConfig $config
+  Write-Host "Claude Desktop config updated: $ClaudeConfig"
+}
+
 function Get-NodeMajor($NodePath) {
   try {
     $major = & $NodePath -p "Number(process.versions.node.split('.')[0])" 2>$null
@@ -152,24 +192,9 @@ Write-Host "Server status check passed."
 
 if (!$SkipClaudeDesktop) {
   Write-Section "Configuring Claude Desktop"
-  $ClaudeDir = Join-Path $env:APPDATA "Claude"
-  $ClaudeConfig = Join-Path $ClaudeDir "claude_desktop_config.json"
-  New-Item -ItemType Directory -Force -Path $ClaudeDir | Out-Null
-  Backup-File $ClaudeConfig
-
-  $config = Read-JsonFile $ClaudeConfig
-  if (!($config.PSObject.Properties.Name -contains "mcpServers") -or $null -eq $config.mcpServers) {
-    Ensure-Property $config "mcpServers" ([pscustomobject]@{})
+  foreach ($ClaudeConfig in Get-ClaudeConfigPaths) {
+    Update-ClaudeConfig $ClaudeConfig $ServerName $NodeCmd $ServerPath $RepoRoot
   }
-
-  $serverConfig = [ordered]@{
-    command = "$NodeCmd"
-    args = @("$ServerPath", "--repo", "$RepoRoot")
-  }
-
-  Ensure-Property $config.mcpServers $ServerName ([pscustomobject]$serverConfig)
-  $config | ConvertTo-Json -Depth 10 | Set-Content -Path $ClaudeConfig -Encoding UTF8
-  Write-Host "Claude Desktop config updated: $ClaudeConfig"
   Write-Host "Restart Claude Desktop before using the wiki tools."
 }
 
