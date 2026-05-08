@@ -4,6 +4,16 @@ This turns the NVIDIA CUDA wiki into a local source-of-truth tool for Claude and
 
 ## 1. Click Here to Install
 
+Preferred for Claude Desktop:
+
+```text
+NVIDIA-Wiki-MCP.mcpb
+```
+
+Double-click it, let Claude Desktop open it, then click **Install**. This uses Claude Desktop's extension installer and does not require Node.js or command-line tools.
+
+If that file does not open or your Claude Desktop policy blocks custom extensions, use the fallback installer below.
+
 On Windows, open this repo folder and double-click:
 
 ```text
@@ -30,6 +40,14 @@ Open Claude or Codex and paste this:
 
 ```text
 Use the NVIDIA Wiki MCP. I have a retail customer that wants to reduce losses in their stores. What is the best way to do this?
+```
+
+If Claude talks about searching the web or external sources, use this stricter test prompt:
+
+```text
+Use your local nvidia-wiki MCP tools. Do not use web search. First call wiki_status, then call wiki_answer_context for this question, then answer only from the wiki: I have a retail customer that wants to reduce losses in their stores. What is the best way to do this?
+
+If you cannot see a tool named wiki_status, say exactly: nvidia-wiki MCP is not loaded.
 ```
 
 You should get an answer grounded in NVIDIA wiki pages such as:
@@ -115,6 +133,14 @@ If needed, rerun:
 ```text
 Install-NVIDIA-Wiki-MCP.cmd
 ```
+
+On Windows, you can also double-click this checker:
+
+```text
+Check-NVIDIA-Wiki-MCP.cmd
+```
+
+It confirms Claude Desktop's config points to the local wiki MCP and runs the MCP status check from that config.
 
 Full details are in [NVIDIA-WIKI-MCP.md](NVIDIA-WIKI-MCP.md).
 

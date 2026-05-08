@@ -14,3 +14,6 @@ audit-links-report.txt
 
 # Local runtime downloaded by MCP installers
 .mcp-runtime/
+
+# Temporary staging created by scripts/build-nvidia-wiki-mcpb.mjs
+.tmp-mcpb-build/

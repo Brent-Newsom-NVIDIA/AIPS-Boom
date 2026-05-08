@@ -17,6 +17,18 @@ The MCP server runs entirely on your machine. It does not host a network service
 
 ## 60-Second Install
 
+### Claude Desktop Extension
+
+For Claude Desktop, the simplest path is:
+
+```text
+NVIDIA-Wiki-MCP.mcpb
+```
+
+Double-click the file, let Claude Desktop open it, then click **Install**.
+
+This path uses Claude Desktop's local extension installer. It does not require a separate Node.js install because Claude Desktop provides the Node runtime for desktop extensions. If your enterprise policy blocks unsigned or custom desktop extensions, use the Windows or macOS fallback installer below.
+
 ### Windows
 
 1. Clone or download this repo.
@@ -207,6 +219,12 @@ Restart Claude/Codex after updating so the MCP server reloads the latest Markdow
 
 If the repo path changed, rerun the installer.
 
+If you ship `NVIDIA-Wiki-MCP.mcpb`, rebuild it after wiki updates:
+
+```bash
+node scripts/build-nvidia-wiki-mcpb.mjs
+```
+
 ## Security Notes
 
 - Read-only
@@ -243,3 +261,7 @@ codex mcp list
 4. Restart the app or terminal session.
 
 5. Rerun the installer from the repo root.
+
+On Windows, double-click `Check-NVIDIA-Wiki-MCP.cmd` to verify that Claude Desktop's config points to the local MCP server and that the server runs from that config.
+
+If Claude Desktop still does not show or use the tools after the checker passes, confirm you are using the Claude Desktop app, not `claude.ai` or Cowork. Local MCP servers configured through `claude_desktop_config.json` are a Claude Desktop local mechanism, and some enterprise policies can disable local developer MCP servers.

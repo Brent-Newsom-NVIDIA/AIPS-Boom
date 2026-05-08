@@ -45,6 +45,12 @@ function Backup-File($Path) {
   }
 }
 
+function Write-JsonFile($Path, $Object) {
+  $json = $Object | ConvertTo-Json -Depth 10
+  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+  [System.IO.File]::WriteAllText($Path, "$json`n", $utf8NoBom)
+}
+
 function Get-NodeMajor($NodePath) {
   try {
     $major = & $NodePath -p "Number(process.versions.node.split('.')[0])" 2>$null
@@ -168,7 +174,7 @@ if (!$SkipClaudeDesktop) {
   }
 
   Ensure-Property $config.mcpServers $ServerName ([pscustomobject]$serverConfig)
-  $config | ConvertTo-Json -Depth 10 | Set-Content -Path $ClaudeConfig -Encoding UTF8
+  Write-JsonFile $ClaudeConfig $config
   Write-Host "Claude Desktop config updated: $ClaudeConfig"
   Write-Host "Restart Claude Desktop before using the wiki tools."
 }
