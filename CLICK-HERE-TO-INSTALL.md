@@ -2,6 +2,17 @@
 
 This turns the NVIDIA CUDA wiki into a local source-of-truth tool for Claude and Codex.
 
+## Simplest Fallback: Claude Project
+
+If MCP or desktop extensions do not load, use the Claude Project package instead:
+
+1. Create a Claude Project named `NVIDIA Wiki`.
+2. Paste the instructions from `claude-project/PROJECT-INSTRUCTIONS-COPY-PASTE.md` into Project instructions.
+3. Upload `claude-project/NVIDIA-WIKI-PROJECT-KNOWLEDGE.md` as Project Knowledge.
+4. Ask questions inside that project.
+
+Full instructions are in [CLAUDE-PROJECT-SETUP.md](CLAUDE-PROJECT-SETUP.md).
+
 ## 1. Click Here to Install
 
 Preferred for Claude Desktop:

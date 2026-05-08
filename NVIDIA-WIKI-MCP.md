@@ -4,6 +4,8 @@ Turn the NVIDIA CUDA wiki into a local source-of-truth tool for Claude and Codex
 
 Need the shortest path? Use [CLICK-HERE-TO-INSTALL.md](CLICK-HERE-TO-INSTALL.md).
 
+If local MCP is blocked or Claude Desktop does not load the connector, use [CLAUDE-PROJECT-SETUP.md](CLAUDE-PROJECT-SETUP.md) instead.
+
 The MCP server runs entirely on your machine. It does not host a network service, does not call the internet, and only reads the local `content/` folder from this repo. The installer may download a portable Node runtime if Node is not already available.
 
 ## What You Get

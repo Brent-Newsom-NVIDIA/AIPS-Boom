@@ -10,7 +10,7 @@ index.md    <- Master index of all wiki pages
 log.md      <- Ingestion history and change log
 AGENTS.md   <- Shared project instructions for this vault
 CLAUDE.md   <- Shared Claude instructions for this vault
-codex.md    <- This file
+codex.md    <- Shared Codex instructions for this vault
 ```
 
 There is no canonical `raw/` folder in this repository snapshot. Sources may come from user-provided URLs, local files, docs pages, PDFs, transcripts, or other materials the user explicitly points you to.
