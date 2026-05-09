@@ -2,8 +2,8 @@
 
 *A connected NVIDIA software, CUDA library, hardware, and model knowledge graph for mapping customer needs to NVIDIA technology.*
 
-*Last updated: 2026-04-30*
-*Total pages: 492*
+*Last updated: 2026-05-09*
+*Total pages: 503*
 
 ---
 
@@ -433,7 +433,13 @@
 - [[NVIDIA-DGX]] — Purpose-built AI supercomputing systems: DGX H100, DGX B200, DGX SuperPOD
 - [[NVIDIA-DGX-SuperPOD]] — Scale-out NVIDIA AI supercomputing reference architecture for AI factories
 - [[NVIDIA-DGX-BasePOD]] — Prescriptive enterprise DGX reference architecture for scalable AI infrastructure
+- [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]] — Current BasePOD RA for two-to-eight-node DGX B200/H200/H100 enterprise AI infrastructure
+- [[NVIDIA-DGX-B200]] — Blackwell-generation DGX system with eight GPUs, NVLink/NVSwitch, ConnectX-7, BlueField-3, AI Enterprise, and Mission Control
+- [[NVIDIA-DGX-SuperPOD-B200-RA]] — DGX B200 SuperPOD RA with 32-system scalable units and NDR400 InfiniBand
+- [[NVIDIA-DGX-SuperPOD-GB200-RA]] — DGX GB200 SuperPOD RA for rack-scale GB200 NVL72, NVLink 5, NDR InfiniBand, and Spectrum-4 Ethernet
 - [[NVIDIA-DGX-B300]] — Blackwell Ultra DGX system generation for AI factory training and inference deployments
+- [[NVIDIA-DGX-SuperPOD-B300-Spectrum-4-Ethernet-RA]] — DGX B300 SuperPOD RA for Spectrum-4/Spectrum-X Ethernet and DC busbar power
+- [[NVIDIA-DGX-SuperPOD-B300-Quantum-X800-InfiniBand-RA]] — DGX B300 SuperPOD RA for Quantum-X800 InfiniBand and AC power
 - [[NVIDIA-DGX-Spark]] — Compact GB10 Grace Blackwell desktop AI computer for local model and agent development
 - [[NVIDIA-DGX-Station]] — GB300 Grace Blackwell Ultra deskside AI supercomputer for large local AI workloads
 - [[NVIDIA-DGX-Enterprise-Support]] — DGX support, infrastructure services, and education services for production AI factories
@@ -454,6 +460,8 @@
 - [[NVIDIA-HGX]] — Multi-GPU baseboard platform (8x SXM) for OEM servers; HGX B200, B300, Rubin NVL8 configurations
 - [[NVIDIA-HGX-AI-Factory]] — Enterprise RA for HGX B300 AI factories using the 2-8-9-800 pattern
 - [[NVIDIA-GB200-NVL4]] — Single-server 4x B200 + 2x Grace config; 1.3 TB coherent memory, ~6 kW, OEM ecosystem entry point
+- [[NVIDIA-Vera-Rubin-POD]] — POD-scale Vera Rubin AI factory architecture combining Rubin compute, Groq 3 LPX, Vera CPU, BlueField-4 STX, and Spectrum-6 SPX racks
+- [[NVIDIA-Groq-3-LPX]] — Low-latency inference accelerator rack for Vera Rubin POD agentic AI workloads
 
 ---
 
@@ -461,6 +469,7 @@
 
 - [[NVIDIA-Blackwell-Architecture]] — 2024 architecture: FP4 Tensor Cores, NVLink 5 (1.8TB/s), NVL72 rack-scale, NVLink-C2C
 - [[NVIDIA-Vera-Rubin]] — Next-generation platform after Blackwell with Rubin GPUs, Vera CPU, NVLink 6, and Vera Rubin NVL144 direction
+- [[NVIDIA-Vera-Rubin-POD]] — POD-scale Vera Rubin AI factory architecture for five rack-scale systems operating as one AI supercomputer
 - [[NVIDIA-Vera-CPU]] — Custom Arm CPU in the Vera Rubin platform, positioned as the successor direction after Grace
 - [[NVIDIA-Hopper-Architecture]] — 2022 architecture: Transformer Engine (FP8), NVLink 4 (900GB/s), MIG, Confidential Computing
 - [[NVIDIA-Ada-Lovelace-Architecture]] — 2022 architecture for RTX 40/pro visualization GPUs with SER and third-generation RT Cores
@@ -551,6 +560,9 @@
 - [[NVIDIA-DSX-Air]] — cloud-hosted network simulation and digital twin platform for validating NVIDIA networking configurations
 - [[NVIDIA-ConnectX-InfiniBand]] — NVIDIA ConnectX NICs and Quantum InfiniBand switches powering DGX SuperPODs and HPC clusters (up to 400Gb/s)
 - [[NVIDIA-ConnectX-9]] — 1.6Tb/s-class SuperNIC for next-generation InfiniBand/Ethernet AI networking
+- [[NVIDIA-Quantum-X800-InfiniBand]] — End-to-end 800 Gb/s InfiniBand platform for massive-scale AI and HPC fabrics
+- [[NVIDIA-Spectrum-X-Validated-Solution-Stack]] — Current validated software/firmware stack table for Spectrum-X AI factory deployments
+- [[NVIDIA-Spectrum-6-SPX]] — Vera Rubin POD networking rack using Spectrum-X Ethernet or Quantum-X800 InfiniBand options
 - [[NVIDIA-BlueField-DPU]] — Data Processing Unit combining ConnectX NIC with ARM CPU and hardware accelerators for infrastructure offload
 - [[NVIDIA-BlueField-4]] — Next-generation DPU tied to STX, CMX, AI-native storage, context memory, and AI data platforms
 - [[NVIDIA-Rivermax]] — optimized networking SDK for GPUDirect media/data streaming, SMPTE ST 2110, BlueField, and ConnectX workflows
@@ -621,10 +633,13 @@
 
 ### InfiniBand
 - [[NVIDIA-Quantum-InfiniBand]] — Quantum-2 NDR 400Gb/s InfiniBand switches with SHARP in-network allreduce
+- [[NVIDIA-Quantum-X800-InfiniBand]] — Quantum-X800 / XDR 800Gb/s InfiniBand platform with SHARP v4, ConnectX-8/9, LinkX, and UFM
 - [[NVIDIA-UFM]] — Unified Fabric Manager: InfiniBand/Ethernet fabric management, monitoring, and routing
 
 ### Ethernet AI Networking
 - [[NVIDIA-Spectrum-X]] — Spectrum-4 400GbE AI networking platform; Adaptive Routing for lossless Ethernet RDMA
+- [[NVIDIA-Spectrum-X-Validated-Solution-Stack]] — Validated Spectrum-X software and firmware compatibility table for GB300, B300, and H200 deployments
+- [[NVIDIA-Spectrum-6-SPX]] — Vera Rubin POD networking rack for Spectrum-X Ethernet or Quantum-X800 InfiniBand
 - [[NVIDIA-Silicon-Photonics]] — Optical networking direction for scaling future Spectrum-X/AI factory fabrics
 - [[NVIDIA-Cumulus-Linux]] — validated switch OS layer for current Spectrum-X reference architecture releases
 - [[NVIDIA-NetQ]] — fabric operations visibility and validation for Ethernet AI networking

@@ -2,6 +2,58 @@
 
 ---
 
+## 2026-05-09 - AIPS BOOM batch: AI factory hardware, networking, and reference architecture ingest
+
+**Rollback backup:** `/home/bnewsom/codex/backups/nvidia-cuda-wiki/pre-aips-boom-ai-factory-hardware-20260509T040606Z`; local Git tag `codex-backup-pre-aips-boom-ai-factory-hardware-20260509T040606Z`
+
+**Source URLs:** https://docs.nvidia.com/dgx-basepod/reference-architecture-infrastructure-foundation-enterprise-ai/latest/index.html, https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-b200/latest/index.html, https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-gb200/latest/index.html, https://docs.nvidia.com/dgx-superpod/reference-architecture/scalable-infrastructure-b300/latest/index.html, https://docs.nvidia.com/dgx-superpod/reference-architecture/scalable-infrastructure-b300-xdr/latest/index.html, https://docs.nvidia.com/networking/software/spectrumx-solution-stack/index.html, https://docs.nvidia.com/enterprise-reference-architectures/index.html, https://www.nvidia.com/en-us/data-center/dgx-b200/, https://docs.nvidia.com/dgx/dgxb200-user-guide/, https://www.nvidia.com/en-us/networking/products/infiniband/quantum-x800/, https://developer.nvidia.com/blog/nvidia-vera-rubin-pod-seven-chips-five-rack-scale-systems-one-ai-supercomputer/, https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform, https://developer.nvidia.com/blog/inside-the-nvidia-rubin-platform-six-new-chips-one-ai-supercomputer/, https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform, https://www.nvidia.com/en-us/data-center/lpx/
+
+**Gap analysis summary:**
+
+- Found that the wiki already had strong canonical pages for [[NVIDIA-Enterprise-AI-Factory]], [[NVIDIA-Enterprise-Reference-Architectures]], [[NVIDIA-DGX]], [[NVIDIA-DGX-SuperPOD]], [[NVIDIA-DGX-B300]], [[NVIDIA-GB200-NVL72]], [[NVIDIA-GB300-NVL72]], [[NVIDIA-Spectrum-X]], [[NVIDIA-Quantum-InfiniBand]], [[NVIDIA-BlueField-DPU]], [[NVIDIA-BlueField-4]], [[NVIDIA-STX]], [[NVIDIA-CMX]], and [[NVIDIA-Vera-Rubin]].
+- Added missing first-class pages for the current DGX BasePOD B200/H200/H100 RA, DGX SuperPOD B200 RA, DGX SuperPOD GB200 RA, and two DGX B300 SuperPOD RA variants because each is a distinct NVIDIA-authored architecture document.
+- Added [[NVIDIA-DGX-B200]] as a product/system page because B200 was only represented indirectly through DGX and SuperPOD pages.
+- Added [[NVIDIA-Spectrum-X-Validated-Solution-Stack]] and [[NVIDIA-Quantum-X800-InfiniBand]] to make current Ethernet/InfiniBand AI factory fabric choices queryable by validated stack and 800 Gb/s generation.
+- Added [[NVIDIA-Vera-Rubin-POD]], [[NVIDIA-Spectrum-6-SPX]], and [[NVIDIA-Groq-3-LPX]] from NVIDIA-authored Vera Rubin materials to capture the next-generation AI factory hardware composition.
+- Avoided broad build.nvidia scraping and duplicate build-card ingestion; only durable NVIDIA-authored pages/products were added.
+
+**Pages created (11 total):**
+
+- `content/wiki/NVIDIA-DGX-BasePOD-B200-H200-H100-RA.md`
+- `content/wiki/NVIDIA-DGX-B200.md`
+- `content/wiki/NVIDIA-DGX-SuperPOD-B200-RA.md`
+- `content/wiki/NVIDIA-DGX-SuperPOD-GB200-RA.md`
+- `content/wiki/NVIDIA-DGX-SuperPOD-B300-Spectrum-4-Ethernet-RA.md`
+- `content/wiki/NVIDIA-DGX-SuperPOD-B300-Quantum-X800-InfiniBand-RA.md`
+- `content/wiki/NVIDIA-Spectrum-X-Validated-Solution-Stack.md`
+- `content/wiki/NVIDIA-Quantum-X800-InfiniBand.md`
+- `content/wiki/NVIDIA-Vera-Rubin-POD.md`
+- `content/wiki/NVIDIA-Spectrum-6-SPX.md`
+- `content/wiki/NVIDIA-Groq-3-LPX.md`
+
+**Pages updated:**
+
+- `content/wiki/NVIDIA-DGX.md`
+- `content/wiki/NVIDIA-DGX-SuperPOD.md`
+- `content/wiki/NVIDIA-DGX-BasePOD.md`
+- `content/wiki/NVIDIA-DGX-B300.md`
+- `content/wiki/NVIDIA-GB200-NVL72.md`
+- `content/wiki/NVIDIA-GB300-NVL72.md`
+- `content/wiki/NVIDIA-Spectrum-X.md`
+- `content/wiki/NVIDIA-Quantum-InfiniBand.md`
+- `content/wiki/NVIDIA-Enterprise-Reference-Architectures.md`
+- `content/wiki/NVIDIA-Enterprise-AI-Factory.md`
+- `content/wiki/NVIDIA-Vera-Rubin.md`
+- `content/wiki/NVIDIA-CMX.md`
+- `content/wiki/NVIDIA-STX.md`
+- `content/wiki/NVIDIA-BlueField-DPU.md`
+- `content/wiki/NVIDIA-BlueField-4.md`
+- `content/wiki/NVIDIA-HGX.md`
+- `content/wiki/NVIDIA-Mission-Control.md`
+- `content/index.md`
+
+---
+
 ## 2026-04-30 - Batch 101: RAPIDS, Spark RAPIDS, DGL, FLARE, Merlin, and Legate Core coverage
 
 **Rollback backup:** `/home/bnewsom/codex/backups/nvidia-cuda-wiki/next-practical-pre-batch101-20260430T171224Z`; local Git tag `codex-backup-pre-batch101-20260430T171224Z`

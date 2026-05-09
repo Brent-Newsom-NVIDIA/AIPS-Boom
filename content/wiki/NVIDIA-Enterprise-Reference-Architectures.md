@@ -2,9 +2,9 @@
 
 **Type:** Reference Architecture Program
 **Tags:** NVIDIA, Enterprise Reference Architecture, AI factory, certified systems, Spectrum-X, AI Enterprise, Kubernetes
-**Related:** [[NVIDIA-Enterprise-AI-Factory]], [[NVIDIA-RTX-PRO-AI-Factory]], [[NVIDIA-HGX-AI-Factory]], [[NVIDIA-NVL72-AI-Factory]], [[NVIDIA-AI-Enterprise-Software-Reference-Architecture]], [[NVIDIA-Enterprise-RA-Observability-Guide]], [[NVIDIA-AI-Factory-for-Government]], [[Red-Hat-AI-Factory-with-NVIDIA]], [[NVIDIA-AI-Enterprise]], [[NVIDIA-Certified-Systems]], [[NVIDIA-Certified-Storage]], [[NVIDIA-Spectrum-X]], [[NVIDIA-BlueField-DPU]], [[NVIDIA-Base-Command-Manager]], [[NVIDIA-Run-ai]], [[NVIDIA-NetQ]]
-**Sources:** https://docs.nvidia.com/enterprise-reference-architectures/index.html, https://docs.nvidia.com/enterprise-reference-architectures/white-paper/latest/index.html, https://docs.nvidia.com/enterprise-reference-architectures/white-paper/latest/introduction.html, https://docs.nvidia.com/ai-enterprise/deployment/red-hat-ai-factory/latest/index.html
-**Last Updated:** 2026-04-29
+**Related:** [[NVIDIA-Enterprise-AI-Factory]], [[NVIDIA-RTX-PRO-AI-Factory]], [[NVIDIA-HGX-AI-Factory]], [[NVIDIA-NVL72-AI-Factory]], [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]], [[NVIDIA-DGX-SuperPOD-B200-RA]], [[NVIDIA-DGX-SuperPOD-GB200-RA]], [[NVIDIA-DGX-SuperPOD-B300-Spectrum-4-Ethernet-RA]], [[NVIDIA-DGX-SuperPOD-B300-Quantum-X800-InfiniBand-RA]], [[NVIDIA-AI-Enterprise-Software-Reference-Architecture]], [[NVIDIA-Enterprise-RA-Observability-Guide]], [[NVIDIA-AI-Factory-for-Government]], [[Red-Hat-AI-Factory-with-NVIDIA]], [[NVIDIA-AI-Enterprise]], [[NVIDIA-Certified-Systems]], [[NVIDIA-Certified-Storage]], [[NVIDIA-Spectrum-X]], [[NVIDIA-Spectrum-X-Validated-Solution-Stack]], [[NVIDIA-Quantum-X800-InfiniBand]], [[NVIDIA-BlueField-DPU]], [[NVIDIA-Base-Command-Manager]], [[NVIDIA-Run-ai]], [[NVIDIA-NetQ]]
+**Sources:** https://docs.nvidia.com/enterprise-reference-architectures/index.html, https://docs.nvidia.com/enterprise-reference-architectures/white-paper/latest/index.html, https://docs.nvidia.com/enterprise-reference-architectures/white-paper/latest/introduction.html, https://docs.nvidia.com/ai-enterprise/deployment/red-hat-ai-factory/latest/index.html, https://docs.nvidia.com/dgx-basepod/reference-architecture-infrastructure-foundation-enterprise-ai/latest/index.html, https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-b200/latest/index.html, https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-gb200/latest/index.html, https://docs.nvidia.com/dgx-superpod/reference-architecture/scalable-infrastructure-b300/latest/index.html, https://docs.nvidia.com/dgx-superpod/reference-architecture/scalable-infrastructure-b300-xdr/latest/index.html
+**Last Updated:** 2026-05-09
 
 ## Summary
 NVIDIA Enterprise Reference Architectures are NVIDIA-authored design patterns for building enterprise AI factories from validated compute, networking, storage, software, and operations components. The current docs hub groups the program into hardware reference architectures, software reference architecture guidance, observability, and deployment guides.
@@ -18,6 +18,7 @@ Enterprise RAs are meant to reduce the risk of building AI infrastructure from s
 - [[NVIDIA-RTX-PRO-AI-Factory]] for RTX PRO 6000 Blackwell Server Edition systems using a 2-8-5-200 pattern.
 - [[NVIDIA-HGX-AI-Factory]] for HGX B300 systems using a 2-8-9-800 pattern.
 - [[NVIDIA-NVL72-AI-Factory]] for GB300 NVL72 rack-scale systems with NVLink domains and Spectrum-X networking.
+- DGX infrastructure RAs are represented as separate canonical pages: [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]], [[NVIDIA-DGX-SuperPOD-B200-RA]], [[NVIDIA-DGX-SuperPOD-GB200-RA]], [[NVIDIA-DGX-SuperPOD-B300-Spectrum-4-Ethernet-RA]], and [[NVIDIA-DGX-SuperPOD-B300-Quantum-X800-InfiniBand-RA]].
 - [[NVIDIA-AI-Enterprise-Software-Reference-Architecture]] for the common AI Enterprise software stack that runs across supported hardware.
 - [[NVIDIA-Enterprise-RA-Observability-Guide]] for dashboarding, alerting, and telemetry across the RA stack.
 - [[NVIDIA-AI-Factory-for-Government]] for government/high-assurance AI factory deployment architecture.
@@ -32,6 +33,10 @@ This page is the canonical program-level page. It should not absorb every deploy
 - [[NVIDIA-RTX-PRO-AI-Factory]] - air-cooled RTX PRO AI factory architecture.
 - [[NVIDIA-HGX-AI-Factory]] - HGX B300 AI factory architecture for training, inference, and HPC.
 - [[NVIDIA-NVL72-AI-Factory]] - GB300 NVL72 rack-scale AI factory architecture.
+- [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]] - BasePOD RA for two-to-eight-node DGX B200/H200/H100 enterprise infrastructure.
+- [[NVIDIA-DGX-SuperPOD-B200-RA]] - B200 SuperPOD RA for 32-system scalable units.
+- [[NVIDIA-DGX-SuperPOD-GB200-RA]] - GB200 rack-scale SuperPOD RA.
+- [[NVIDIA-DGX-SuperPOD-B300-Spectrum-4-Ethernet-RA]] and [[NVIDIA-DGX-SuperPOD-B300-Quantum-X800-InfiniBand-RA]] - Blackwell Ultra DGX B300 SuperPOD RA variants.
 - [[NVIDIA-AI-Enterprise-Software-Reference-Architecture]] - consistent software stack for production AI workloads.
 - [[NVIDIA-Enterprise-RA-Observability-Guide]] - monitoring and alerting guide for RA environments.
 - [[NVIDIA-AI-Factory-for-Government]] - government AI factory reference design adjacent to Enterprise RA planning.
@@ -40,6 +45,8 @@ This page is the canonical program-level page. It should not absorb every deploy
 - [[NVIDIA-Certified-Systems]] - validated servers are the compute foundation for Enterprise RAs.
 - [[NVIDIA-Certified-Storage]] - validated storage is part of the production AI factory design.
 - [[NVIDIA-Spectrum-X]] - Ethernet fabric family used across current Enterprise RA designs.
+- [[NVIDIA-Spectrum-X-Validated-Solution-Stack]] - validated stack table for Spectrum-X AI factory fabrics.
+- [[NVIDIA-Quantum-X800-InfiniBand]] - 800 Gb/s InfiniBand fabric option in SuperPOD-scale AI factories.
 - [[NVIDIA-BlueField-DPU]] - infrastructure acceleration, security, and north-south network role in RA designs.
 - [[NVIDIA-Base-Command-Manager]] - cluster provisioning and management component used in deployment guidance.
 - [[NVIDIA-Run-ai]] - workload orchestration path in current AI Enterprise and RA materials.

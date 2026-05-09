@@ -2,9 +2,9 @@
 
 **Type:** Platform
 **Tags:** NVIDIA, GPU, Hardware, NVLink, Blackwell, Data Center, Rack-Scale, HPC, AI
-**Related:** [[NVIDIA-Blackwell-Architecture]], [[NVIDIA-GB300-NVL72]], [[NVIDIA-DGX-B300]], [[NVIDIA-Accelerated-Quantum-Center]], [[NVIDIA-DGX-Quantum]], [[NVLink]], [[NVIDIA-DGX]], [[NCCL]], [[NVIDIA-Grace-CPU]], [[NVIDIA-Hopper-Architecture]], [[TensorRT-LLM]], [[Megatron-LM]]
-**Sources:** NVIDIA official product page (live fetch 2026-04-10; updated from https://www.nvidia.com/en-us/data-center/gb300-nvl72/)
-**Last Updated:** 2026-04-29
+**Related:** [[NVIDIA-Blackwell-Architecture]], [[NVIDIA-DGX-B200]], [[NVIDIA-DGX-SuperPOD-GB200-RA]], [[NVIDIA-GB300-NVL72]], [[NVIDIA-DGX-B300]], [[NVIDIA-Accelerated-Quantum-Center]], [[NVIDIA-DGX-Quantum]], [[NVLink]], [[NVIDIA-DGX]], [[NVIDIA-DGX-SuperPOD]], [[NVIDIA-Mission-Control]], [[NVIDIA-Quantum-InfiniBand]], [[NVIDIA-Spectrum-X]], [[NVIDIA-Certified-Storage]], [[NCCL]], [[NVIDIA-Grace-CPU]], [[NVIDIA-Hopper-Architecture]], [[TensorRT-LLM]], [[Megatron-LM]]
+**Sources:** NVIDIA official product page (live fetch 2026-04-10; updated from https://www.nvidia.com/en-us/data-center/gb200-nvl72/, https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-gb200/latest/index.html, https://www.nvidia.com/en-us/data-center/gb300-nvl72/)
+**Last Updated:** 2026-05-09
 
 ## Summary
 The NVIDIA GB200 NVL72 is a rack-scale, liquid-cooled AI supercomputer housing 72 Blackwell GPUs and 36 Grace CPUs connected via fifth-generation NVLink. It delivers 1,440 PFLOPS of FP4 AI performance and is designed for trillion-parameter LLM training and inference at exascale. It claims 30x faster LLM inference and 25x better energy efficiency vs. the H100 generation.
@@ -62,8 +62,13 @@ Cloud service providers, hyperscalers, national labs, and enterprises running fr
 - Rack-scale deployment (full rack)
 - NVIDIA NVLink Switch System
 
+### Reference architecture placement
+[[NVIDIA-DGX-SuperPOD-GB200-RA]] is the canonical wiki page for the DGX SuperPOD reference architecture based on GB200 NVL72 racks. That RA uses eight DGX GB200 systems per scalable unit, NDR 400 Gb/s InfiniBand compute fabric, Spectrum-4/Spectrum-X Ethernet for storage and in-band management, [[NVIDIA-Mission-Control]], [[NVIDIA-AI-Enterprise]], and certified high-performance storage.
+
 ## Connections
 - [[NVIDIA-Blackwell-Architecture]] — built entirely on Blackwell B200 GPUs
+- [[NVIDIA-DGX-B200]] — node-level Blackwell DGX system adjacent to GB200 NVL72.
+- [[NVIDIA-DGX-SuperPOD-GB200-RA]] — DGX SuperPOD reference architecture for GB200 rack-scale deployments.
 - [[NVIDIA-GB300-NVL72]] — Blackwell Ultra successor rack-scale NVL72 system.
 - [[NVIDIA-DGX-B300]] — current DGX Blackwell Ultra system direction.
 - [[NVIDIA-Accelerated-Quantum-Center]] - NVAQC uses GB200 NVL72-class systems for accelerated quantum computing research.
@@ -71,6 +76,10 @@ Cloud service providers, hyperscalers, national labs, and enterprises running fr
 - [[NVLink]] — 5th-gen NVLink provides the 130 TB/s all-to-all fabric
 - [[NVIDIA-Grace-CPU]] — 36 Grace CPUs paired via NVLink-C2C
 - [[NVIDIA-DGX]] — DGX GB200 is the branded version of this platform
+- [[NVIDIA-DGX-SuperPOD]] — SuperPOD architecture around GB200 NVL72.
+- [[NVIDIA-Mission-Control]] — operations and orchestration layer in the GB200 SuperPOD RA.
+- [[NVIDIA-Quantum-InfiniBand]] and [[NVIDIA-Spectrum-X]] — compute and storage/management fabrics in the GB200 SuperPOD RA.
+- [[NVIDIA-Certified-Storage]] — certified high-performance storage is required to feed GB200 SuperPOD workloads.
 - [[TensorRT-LLM]] — primary inference software stack for this hardware
 - [[Megatron-LM]] — primary training framework for trillion-parameter models
 - [[NCCL]] — collective communications library used across the 72 GPUs
@@ -79,4 +88,5 @@ Cloud service providers, hyperscalers, national labs, and enterprises running fr
 ## Resources
 - [Official Product Page](https://www.nvidia.com/en-us/data-center/gb200-nvl72/)
 - [DGX GB200 System](https://www.nvidia.com/en-us/data-center/dgx-gb200/)
+- [DGX SuperPOD GB200 RA](https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-gb200/latest/index.html)
 - [Blackwell Architecture Overview](https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/)

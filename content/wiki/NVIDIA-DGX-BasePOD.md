@@ -2,9 +2,9 @@
 
 **Type:** Platform
 **Tags:** NVIDIA, DGX BasePOD, DGX, reference architecture, AI factory, enterprise AI, Mission Control, Base Command Manager
-**Related:** [[NVIDIA-DGX]], [[NVIDIA-DGX-SuperPOD]], [[NVIDIA-DGX-B300]], [[NVIDIA-GB300-NVL72]], [[NVIDIA-AI-Enterprise]], [[NVIDIA-Mission-Control]], [[NVIDIA-Base-Command-Manager]], [[NVIDIA-BaseOS]], [[NVIDIA-Run-ai]], [[NVIDIA-Certified-Storage]], [[NVIDIA-AI-Data-Platform]], [[NVIDIA-Certified-Systems]], [[NVIDIA-DGX-Enterprise-Support]]
-**Sources:** https://docs.nvidia.com/dgx-basepod/index.html, https://www.nvidia.com/en-us/data-center/dgx-basepod/
-**Last Updated:** 2026-04-29
+**Related:** [[NVIDIA-DGX]], [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]], [[NVIDIA-DGX-B200]], [[NVIDIA-DGX-SuperPOD]], [[NVIDIA-DGX-SuperPOD-B200-RA]], [[NVIDIA-DGX-B300]], [[NVIDIA-GB300-NVL72]], [[NVIDIA-AI-Enterprise]], [[NVIDIA-Mission-Control]], [[NVIDIA-Base-Command-Manager]], [[NVIDIA-BaseOS]], [[NVIDIA-Run-ai]], [[NVIDIA-Certified-Storage]], [[NVIDIA-AI-Data-Platform]], [[NVIDIA-Certified-Systems]], [[NVIDIA-DGX-Enterprise-Support]]
+**Sources:** https://docs.nvidia.com/dgx-basepod/index.html, https://www.nvidia.com/en-us/data-center/dgx-basepod/, https://docs.nvidia.com/dgx-basepod/reference-architecture-infrastructure-foundation-enterprise-ai/latest/index.html
+**Last Updated:** 2026-05-09
 
 ## Summary
 NVIDIA DGX BasePOD is NVIDIA's prescriptive enterprise AI infrastructure reference architecture for building and scaling DGX-based AI infrastructure. It sits between individual DGX systems and full [[NVIDIA-DGX-SuperPOD]] deployments by combining DGX systems, NVIDIA networking, storage, software, MLOps components, and deployment guidance into a validated base architecture for enterprise AI factories.
@@ -16,6 +16,7 @@ Enterprise teams often need a validated path to deploy AI infrastructure without
 
 ### Platform role
 - Reference architecture for DGX infrastructure using DGX B200, H200, H100, and A100 era systems in current documentation.
+- The current [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]] document covers a two-to-eight-node NDR400 InfiniBand design with DGX B200, H200, and H100 options.
 - Connects compute, networking switches, software, MLOps solutions, and third-party storage into validated configurations.
 - Provides deployment guides for DGX B200 with [[NVIDIA-Mission-Control]], DGX H200 and DGX A100 with [[NVIDIA-Base-Command-Manager]], Run:ai on DGX BasePOD, AWS connectivity, RHEL deployment, and update workflows.
 - Works with [[NVIDIA-AI-Enterprise]] for supported enterprise AI software.
@@ -29,7 +30,10 @@ BasePOD makes several wiki areas queryable together: [[NVIDIA-DGX]] systems, [[N
 
 ## Connections
 - [[NVIDIA-DGX]] - DGX systems are the compute building blocks.
+- [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]] - current detailed BasePOD RA page for B200/H200/H100 systems.
+- [[NVIDIA-DGX-B200]] - current Blackwell system option in the BasePOD RA.
 - [[NVIDIA-DGX-SuperPOD]] - larger-scale architecture above BasePOD.
+- [[NVIDIA-DGX-SuperPOD-B200-RA]] - B200 SuperPOD path when BasePOD scale is not enough.
 - [[NVIDIA-DGX-B300]] and [[NVIDIA-GB300-NVL72]] - current Blackwell Ultra DGX direction for AI factory infrastructure.
 - [[NVIDIA-AI-Enterprise]] - supported software suite used with DGX BasePOD deployments.
 - [[NVIDIA-Mission-Control]] - current deployment path for DGX B200 BasePOD guidance.
@@ -46,3 +50,4 @@ BasePOD makes several wiki areas queryable together: [[NVIDIA-DGX]] systems, [[N
 ## Resources
 - [NVIDIA DGX BasePOD Docs](https://docs.nvidia.com/dgx-basepod/index.html)
 - [NVIDIA DGX BasePOD Product Page](https://www.nvidia.com/en-us/data-center/dgx-basepod/)
+- [DGX BasePOD B200 H200 H100 RA](https://docs.nvidia.com/dgx-basepod/reference-architecture-infrastructure-foundation-enterprise-ai/latest/index.html)
