@@ -1,10 +1,10 @@
 # NVIDIA Mission Control
 
 **Type:** Platform
-**Tags:** NVIDIA, AI factory, cluster management, DGX, SuperPOD, orchestration, observability, recovery, GB200, GB300
-**Related:** [[NVIDIA-DGX]], [[NVIDIA-DGX-BasePOD]], [[NVIDIA-DGX-Enterprise-Support]], [[NVIDIA-DGX-B300]], [[NVIDIA-GB300-NVL72]], [[NVIDIA-NVL72-AI-Factory]], [[NVIDIA-Vera-Rubin]], [[NVIDIA-Enterprise-AI-Factory]], [[NVIDIA-Enterprise-RA-Observability-Guide]], [[NVIDIA-AI-Enterprise]], [[NVIDIA-AI-Data-Platform]], [[NVIDIA-Certified-Storage]], [[NVIDIA-Base-Command]], [[NVIDIA-Run-ai]], [[NVIDIA-Resiliency-Extension]], [[NVIDIA-UFM]], [[NVIDIA-NetQ]], [[NVIDIA-DCGM]], [[DOCA-Telemetry-Service]], [[NVLink]], [[NVIDIA-GPU-Operator]]
-**Sources:** https://docs.nvidia.com/mission-control/index.html; https://docs.nvidia.com/mission-control/docs/systems-quick-start-guide/2.3.0/index.html; https://docs.nvidia.com/mission-control/docs/systems-quick-start-guide/2.3.0/nmc-release-notes.html; https://docs.nvidia.com/mission-control/docs/systems-administration-guide/2.2.0/overview.html; https://docs.nvidia.com/mission-control/docs/systems-administration-guide/2.3.0/nvlink-management-software.html; https://docs.nvidia.com/mission-control/docs/systems-quick-start-guide/2.3.0/nmc-user-guide-runai-installation.html; https://docs.nvidia.com/mission-control/docs/systems-quick-start-guide/2.0.0/ajr/ajr-overview.html; https://docs.nvidia.com/mission-control/docs/systems-administration-guide/2.1.0/prs/introduction.html; https://nvidia.github.io/nvidia-resiliency-ext/; https://www.nvidia.com/en-us/data-center/gb300-nvl72/
-**Last Updated:** 2026-04-28
+**Tags:** NVIDIA, AI factory, cluster management, DGX, SuperPOD, orchestration, observability, recovery, B200, B300, GB200, GB300
+**Related:** [[NVIDIA-DGX]], [[NVIDIA-DGX-BasePOD]], [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]], [[NVIDIA-DGX-SuperPOD]], [[NVIDIA-DGX-SuperPOD-B200-RA]], [[NVIDIA-DGX-SuperPOD-GB200-RA]], [[NVIDIA-DGX-SuperPOD-B300-Spectrum-4-Ethernet-RA]], [[NVIDIA-DGX-SuperPOD-B300-Quantum-X800-InfiniBand-RA]], [[NVIDIA-DGX-Enterprise-Support]], [[NVIDIA-DGX-B200]], [[NVIDIA-DGX-B300]], [[NVIDIA-GB200-NVL72]], [[NVIDIA-GB300-NVL72]], [[NVIDIA-NVL72-AI-Factory]], [[NVIDIA-Vera-Rubin]], [[NVIDIA-Enterprise-AI-Factory]], [[NVIDIA-Enterprise-RA-Observability-Guide]], [[NVIDIA-AI-Enterprise]], [[NVIDIA-AI-Data-Platform]], [[NVIDIA-Certified-Storage]], [[NVIDIA-Base-Command]], [[NVIDIA-Run-ai]], [[NVIDIA-Resiliency-Extension]], [[NVIDIA-UFM]], [[NVIDIA-NetQ]], [[NVIDIA-DCGM]], [[DOCA-Telemetry-Service]], [[NVLink]], [[NVIDIA-GPU-Operator]]
+**Sources:** https://docs.nvidia.com/mission-control/index.html; https://docs.nvidia.com/mission-control/docs/systems-quick-start-guide/2.3.0/index.html; https://docs.nvidia.com/mission-control/docs/systems-quick-start-guide/2.3.0/nmc-release-notes.html; https://docs.nvidia.com/mission-control/docs/systems-administration-guide/2.2.0/overview.html; https://docs.nvidia.com/mission-control/docs/systems-administration-guide/2.3.0/nvlink-management-software.html; https://docs.nvidia.com/mission-control/docs/systems-quick-start-guide/2.3.0/nmc-user-guide-runai-installation.html; https://docs.nvidia.com/mission-control/docs/systems-quick-start-guide/2.0.0/ajr/ajr-overview.html; https://docs.nvidia.com/mission-control/docs/systems-administration-guide/2.1.0/prs/introduction.html; https://nvidia.github.io/nvidia-resiliency-ext/; https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-b200/latest/index.html; https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-gb200/latest/index.html; https://docs.nvidia.com/dgx-superpod/reference-architecture/scalable-infrastructure-b300/latest/index.html; https://docs.nvidia.com/dgx-superpod/reference-architecture/scalable-infrastructure-b300-xdr/latest/index.html; https://www.nvidia.com/en-us/data-center/gb300-nvl72/
+**Last Updated:** 2026-05-09
 
 ## Summary
 NVIDIA Mission Control is NVIDIA's integrated AI factory management platform for modern DGX and GB200/GB300 NVL72 environments. It combines cluster provisioning, workload orchestration, observability, network management, and automated resiliency workflows into a single operational control plane. In the current docs, Mission Control is the recommended operations stack for DGX B200/B300 and DGX GB200/GB300 class deployments, and it is explicitly required for GB200/GB300 NVL72 installation and management workflows.
@@ -33,12 +33,17 @@ Mission Control documentation also covers Power Reservation Steering (PRS), whic
 
 ### Current release picture
 As of docs accessed on 2026-04-28, the latest surfaced user-guide and release-note content is Mission Control 2.3.0, last updated in late April 2026. Those docs highlight support across DGX B200/B300 and DGX or OEM GB200/GB300 NVL72 systems, air-gapped deployment support, updated Grafana dashboards, newer BCM integration, and continued expansion of autonomous resiliency features.
+Current DGX SuperPOD reference architectures for B200, GB200, and B300 also position Mission Control as the integrated operations and workload plane for AI factory deployments.
 
 ## Connections
 - [[NVIDIA-DGX]] - Mission Control is the operations layer for current DGX B200/B300 and DGX GB200/GB300 deployments.
 - [[NVIDIA-DGX-BasePOD]] - current BasePOD docs include a DGX B200 deployment path with Mission Control.
+- [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]] - BasePOD RA context for smaller DGX deployments.
+- [[NVIDIA-DGX-SuperPOD]], [[NVIDIA-DGX-SuperPOD-B200-RA]], [[NVIDIA-DGX-SuperPOD-GB200-RA]], [[NVIDIA-DGX-SuperPOD-B300-Spectrum-4-Ethernet-RA]], and [[NVIDIA-DGX-SuperPOD-B300-Quantum-X800-InfiniBand-RA]] - SuperPOD RAs where Mission Control is part of the production operations stack.
 - [[NVIDIA-DGX-Enterprise-Support]] - support/services layer for DGX and AI factory operations.
+- [[NVIDIA-DGX-B200]] - Blackwell DGX system generation managed by Mission Control.
 - [[NVIDIA-DGX-B300]] - current Blackwell Ultra DGX system generation that needs AI factory operations.
+- [[NVIDIA-GB200-NVL72]] - rack-scale Grace Blackwell platform in Mission Control/SuperPOD guidance.
 - [[NVIDIA-GB300-NVL72]] - rack-scale Blackwell Ultra platform adjacent to current Mission Control/NVL72 operations.
 - [[NVIDIA-NVL72-AI-Factory]] - Enterprise RA that includes Mission Control as part of the GB300 NVL72 software stack.
 - [[NVIDIA-Vera-Rubin]] - future rack-scale AI platform direction Mission Control-style operations will need to cover.

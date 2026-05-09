@@ -2,9 +2,9 @@
 
 **Type:** Technology
 **Tags:** NVIDIA, DPU, data processing unit, networking, offload, security, SmartNIC, BlueField, infrastructure
-**Related:** [[NVIDIA-DOCA]], [[NVIDIA-DOCA-OFED]], [[DOCA-DPA]], [[DOCA-Flow]], [[DOCA-RDMA]], [[DOCA-GPUNetIO]], [[DOCA-PCC]], [[DOCA-Telemetry-Service]], [[DOCA-App-Shield]], [[DOCA-Device-Emulation]], [[DOCA-SNAP]], [[OVS-DOCA]], [[NVIDIA-Firmware-Tools]], [[NVIDIA-BlueField-4]], [[NVIDIA-DOCA-Platform-Framework]], [[NVIDIA-NCX-Infra-Controller]], [[NVIDIA-STX]], [[NVIDIA-CMX]], [[NVIDIA-AI-Data-Platform]], [[NVIDIA-Enterprise-Reference-Architectures]], [[NVIDIA-RTX-PRO-AI-Factory]], [[NVIDIA-HGX-AI-Factory]], [[NVIDIA-NVL72-AI-Factory]], [[NVIDIA-ConnectX-InfiniBand]], [[NVIDIA-ConnectX-9]], [[GPUDirect-RDMA]], [[NVIDIA-Network-Operator]], [[NVIDIA-Rivermax]], [[NVIDIA-AI-Enterprise]], [[NVIDIA-DCGM]], [[NVIDIA-GPU-Operator]]
-**Sources:** NVIDIA official documentation (live fetch attempted 2026-04-10; updated from https://docs.nvidia.com/doca/sdk/index.html, https://developer.nvidia.com/networking/doca, https://docs.nvidia.com/networking/display/bluefieldbsp4140/troubleshooting-and-how-tos, https://docs.nvidia.com/networking/display/kubernetes2610/index.html, https://www.nvidia.com/en-us/data-center/ai-storage/stx/, https://www.nvidia.com/en-us/data-center/ai-storage/cmx/, https://www.nvidia.com/en-us/networking/products/data-processing-unit/)
-**Last Updated:** 2026-04-29
+**Related:** [[NVIDIA-DOCA]], [[NVIDIA-DOCA-OFED]], [[DOCA-DPA]], [[DOCA-Flow]], [[DOCA-RDMA]], [[DOCA-GPUNetIO]], [[DOCA-PCC]], [[DOCA-Telemetry-Service]], [[DOCA-App-Shield]], [[DOCA-Device-Emulation]], [[DOCA-SNAP]], [[OVS-DOCA]], [[NVIDIA-Firmware-Tools]], [[NVIDIA-BlueField-4]], [[NVIDIA-DOCA-Platform-Framework]], [[NVIDIA-NCX-Infra-Controller]], [[NVIDIA-STX]], [[NVIDIA-CMX]], [[NVIDIA-Vera-Rubin-POD]], [[NVIDIA-Spectrum-6-SPX]], [[NVIDIA-AI-Data-Platform]], [[NVIDIA-Enterprise-Reference-Architectures]], [[NVIDIA-RTX-PRO-AI-Factory]], [[NVIDIA-HGX-AI-Factory]], [[NVIDIA-NVL72-AI-Factory]], [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]], [[NVIDIA-DGX-SuperPOD-B200-RA]], [[NVIDIA-DGX-SuperPOD-GB200-RA]], [[NVIDIA-ConnectX-InfiniBand]], [[NVIDIA-ConnectX-9]], [[GPUDirect-RDMA]], [[NVIDIA-Network-Operator]], [[NVIDIA-Rivermax]], [[NVIDIA-AI-Enterprise]], [[NVIDIA-DCGM]], [[NVIDIA-GPU-Operator]]
+**Sources:** NVIDIA official documentation (live fetch attempted 2026-04-10; updated from https://docs.nvidia.com/doca/sdk/index.html, https://developer.nvidia.com/networking/doca, https://docs.nvidia.com/networking/display/bluefieldbsp4140/troubleshooting-and-how-tos, https://docs.nvidia.com/networking/display/kubernetes2610/index.html, https://www.nvidia.com/en-us/data-center/ai-storage/stx/, https://www.nvidia.com/en-us/data-center/ai-storage/cmx/, https://developer.nvidia.com/blog/nvidia-vera-rubin-pod-seven-chips-five-rack-scale-systems-one-ai-supercomputer/, https://www.nvidia.com/en-us/networking/products/data-processing-unit/)
+**Last Updated:** 2026-05-09
 
 ## Summary
 NVIDIA BlueField is a Data Processing Unit (DPU) — a programmable network adapter that combines a high-speed ConnectX NIC with an embedded ARM multicore CPU, memory, and hardware accelerators for networking, security, and storage tasks. BlueField offloads infrastructure services (firewall, load balancer, storage compression/encryption, RDMA routing, telemetry) from server CPUs to the DPU, freeing server CPUs entirely for application workloads while providing stronger security isolation. In AI data centers, BlueField-3 offloads NCCL networking, storage virtualization, and tenant isolation, enabling GPU servers to run more AI compute per server by reclaiming infrastructure CPU cycles.
@@ -35,6 +35,7 @@ Modern data center servers spend 20–30% of server CPU cycles on infrastructure
 - **Arm Neoverse N2 Cores (BF-3):** 16× ARM Neoverse N2 @ 2 GHz; 16+ GB LPDDR5 on-DPU memory; runs a full Ubuntu or Wind River Linux OS independently of server host
 - **NCCL Offload (BF-3):** BlueField-3 + DOCA-NCCL enables in-network AllReduce and collective offloading for AI training; reduces server CPU burden for communication coordination
 - **AI-native storage direction:** current NVIDIA STX and CMX pages position BlueField-4-class DPUs as storage/context processors for [[NVIDIA-STX]], [[NVIDIA-CMX]], and [[NVIDIA-AI-Data-Platform]] designs.
+- **Vera Rubin POD direction:** current Vera Rubin POD material places BlueField-4 STX racks and CMX context memory storage beside Rubin compute, LPX inference, and SPX networking.
 
 ### Use Cases
 - **AI Training Infrastructure:** Offload networking and storage from CPU in DGX nodes; BlueField-3 handles NCCL network communication processing, freeing CPUs for data preprocessing
@@ -77,9 +78,12 @@ Modern data center servers spend 20–30% of server CPU cycles on infrastructure
 - [[NVIDIA-NCX-Infra-Controller]] — NCX Infra Controller uses DPU-enforced isolation for secure bare-metal lifecycle management.
 - [[NVIDIA-STX]] — STX uses BlueField-4-class acceleration for AI-native storage and data platform designs.
 - [[NVIDIA-CMX]] — CMX uses BlueField-4 for context memory storage, NVMe services, KV-cache integrity, and encryption.
+- [[NVIDIA-Vera-Rubin-POD]] — BlueField-4 STX racks host context memory storage in the POD-scale architecture.
+- [[NVIDIA-Spectrum-6-SPX]] — networking rack carrying traffic between compute, inference, and BlueField-4 STX storage racks.
 - [[NVIDIA-AI-Data-Platform]] — AI Data Platform uses BlueField to accelerate data access across enterprise storage paths.
 - [[NVIDIA-Enterprise-Reference-Architectures]] — current Enterprise RAs use BlueField DPUs and SuperNIC roles for AI factory fabrics.
 - [[NVIDIA-RTX-PRO-AI-Factory]], [[NVIDIA-HGX-AI-Factory]], and [[NVIDIA-NVL72-AI-Factory]] — hardware RAs that include BlueField in compute, converged, or infrastructure roles.
+- [[NVIDIA-DGX-BasePOD-B200-H200-H100-RA]], [[NVIDIA-DGX-SuperPOD-B200-RA]], and [[NVIDIA-DGX-SuperPOD-GB200-RA]] — DGX RAs where BlueField supports storage, management, or front-end networking roles.
 - [[NVIDIA-ConnectX-InfiniBand]] — BlueField is a ConnectX HCA with an embedded ARM processor; shares ASIC design; BF-3 uses ConnectX-7 NIC silicon
 - [[NVIDIA-ConnectX-9]] — adjacent next-generation SuperNIC direction for 1.6 Tb/s-class AI networking.
 - [[GPUDirect-RDMA]] — BlueField supports GPUDirect RDMA; BF-3 NCCL offload enables GPU communication coordinated by DPU
