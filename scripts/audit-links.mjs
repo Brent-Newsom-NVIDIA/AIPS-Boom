@@ -12,7 +12,7 @@ const REPORT_PATH = resolve(ROOT, "audit-links-report.txt")
 
 // Mirror the ignorePatterns from quartz.config.ts. Files matching these
 // are excluded from the audit because they aren't published.
-const IGNORE = ["private", "templates", ".obsidian", "CLAUDE.md", "raw"]
+const IGNORE = ["private", "templates", ".obsidian", "AGENTS.md", "CLAUDE.md", "codex.md", "raw"]
 
 function isIgnored(relPath) {
   const segs = relPath.replace(/\\/g, "/").split("/")

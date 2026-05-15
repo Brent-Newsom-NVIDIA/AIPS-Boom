@@ -2,8 +2,8 @@
 
 *A connected NVIDIA software, CUDA library, hardware, and model knowledge graph for mapping customer needs to NVIDIA technology.*
 
-*Last updated: 2026-05-09*
-*Total pages: 503*
+*Last updated: 2026-05-15*
+*Total pages: 505*
 
 ---
 
@@ -89,6 +89,9 @@
 - [[nvJPEG]] — GPU-accelerated JPEG encoding/decoding; batch decode backend for DALI and nvImageCodec
 - [[nvJPEG2000]] — CUDA-accelerated JPEG2000 encode/decode library
 - [[nvTIFF]] — CUDA-accelerated TIFF encode/decode library
+
+### Rendering & Ray Tracing
+- [[NVIDIA-OptiX]] - GPU-accelerated ray tracing SDK and application framework for CUDA-oriented renderer, visualization, simulation, and ray-query workloads
 
 ### Parallel Algorithms
 - [[Thrust]] — GPU-accelerated C++ STL-compatible parallel algorithms (sort, scan, reduce, transform)
@@ -277,6 +280,8 @@
 - [[NVIDIA-Isaac-GR00T]] — humanoid robotics foundation model platform and data pipeline for general-purpose robot skills
 - [[NVIDIA-Omniverse]] — OpenUSD-based 3D simulation and digital twin platform with RTX rendering
 - [[NVIDIA-Omniverse-Reference-Architectures]] — Omniverse architecture diagrams for RTX PRO industrial facility digital twins and technical requirements
+
+- [[NVIDIA-Newton]] - open-source GPU-accelerated physics engine for robotics simulation, robot learning, contact-rich manipulation, and locomotion
 
 ### Healthcare & Edge AI
 - [[NVIDIA-Holoscan]] — real-time AI sensor processing SDK for medical devices and industrial edge computing
@@ -625,7 +630,7 @@
 
 ### Real-Time Rendering
 - [[NVIDIA-DLSS]] — AI super-sampling and frame generation: DLSS 4 Multi Frame Generation on Blackwell
-- [[NVIDIA-RTX]] — RTX platform: RT Cores, Tensor Cores, SER, OptiX 8; DirectX Raytracing and Vulkan RT
+- [[NVIDIA-RTX]] — RTX platform: RT Cores, Tensor Cores, SER, OptiX, DirectX Raytracing, and Vulkan RT
 
 ---
 

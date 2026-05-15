@@ -2,6 +2,25 @@
 
 ---
 
+## 2026-05-15 - Ingested NVIDIA Newton and OptiX official sources
+
+**Source URLs:** https://developer.nvidia.com/newton-physics, https://developer.nvidia.com/blog/announcing-newton-an-open-source-physics-engine-for-robotics-simulation, https://developer.nvidia.com/blog/newton-adds-contact-rich-manipulation-and-locomotion-capabilities-for-industrial-robotics/, https://developer.nvidia.com/rtx/ray-tracing/optix, https://developer.nvidia.com/designworks/optix/download, https://docs.nvidia.com/gameworks/content/gameworkslibrary/optix/optix_programming_guide.htm, https://developer.nvidia.com/blog/flexible-and-powerful-ray-tracing-with-optix-8/
+
+**Pages created (2 total):**
+
+- `content/wiki/NVIDIA-Newton.md` - open-source GPU-accelerated physics engine for robotics simulation, robot learning, contact-rich manipulation, locomotion, Warp, OpenUSD, Isaac Lab, and MuJoCo Warp workflows
+- `content/wiki/NVIDIA-OptiX.md` - GPU-accelerated ray tracing SDK and application framework for CUDA-oriented rendering, visualization, simulation, denoising, SER, RT Core, and Tensor Core workflows
+
+**Pages updated:**
+
+- `content/index.md` - added Newton under Robotics & Simulation, added OptiX under Rendering & Ray Tracing, refreshed page count/date
+- `content/wiki/NVIDIA-Warp.md` - added Newton and Isaac relationship links
+- `content/wiki/NVIDIA-Isaac.md` - added Newton relationship link
+- `content/wiki/NVIDIA-Omniverse.md` - added Newton and RTX relationship links
+- `content/wiki/NVIDIA-RTX.md` - added OptiX relationship link and refreshed OptiX references
+
+---
+
 ## 2026-05-09 - AIPS BOOM batch: AI factory hardware, networking, and reference architecture ingest
 
 **Rollback backup:** `/home/bnewsom/codex/backups/nvidia-cuda-wiki/pre-aips-boom-ai-factory-hardware-20260509T040606Z`; local Git tag `codex-backup-pre-aips-boom-ai-factory-hardware-20260509T040606Z`

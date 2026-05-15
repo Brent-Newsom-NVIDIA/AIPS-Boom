@@ -2,9 +2,9 @@
 
 **Type:** Technology
 **Tags:** CUDA, NVIDIA, GPU, Robotics, Simulation, ROS, Perception, Edge AI, Physical AI
-**Related:** [[NVIDIA-Isaac-Sim]], [[NVIDIA-Isaac-Lab]], [[NVIDIA-Isaac-ROS]], [[NVIDIA-Isaac-for-Manipulation]], [[NVIDIA-Isaac-for-Mobility]], [[NVIDIA-Isaac-GR00T]], [[Isaac-ROS-NITROS]], [[Isaac-ROS-Visual-SLAM]], [[Isaac-ROS-Visual-Global-Localization]], [[Isaac-ROS-DNN-Inference]], [[Isaac-ROS-Object-Detection]], [[Isaac-ROS-cuMotion]], [[Isaac-ROS-nvblox]], [[Isaac-ROS-FoundationPose]], [[Isaac-ROS-FoundationStereo]], [[NVIDIA-Cosmos]], [[NIM-for-Cosmos-WFM]], [[NIM-for-Cosmos-Embed1]], [[NVIDIA-Jetson-Platform]], [[NVIDIA-Warp]], [[NVIDIA-Omniverse]], [[TensorRT]]
+**Related:** [[NVIDIA-Newton]], [[NVIDIA-Isaac-Sim]], [[NVIDIA-Isaac-Lab]], [[NVIDIA-Isaac-ROS]], [[NVIDIA-Isaac-for-Manipulation]], [[NVIDIA-Isaac-for-Mobility]], [[NVIDIA-Isaac-GR00T]], [[Isaac-ROS-NITROS]], [[Isaac-ROS-Visual-SLAM]], [[Isaac-ROS-Visual-Global-Localization]], [[Isaac-ROS-DNN-Inference]], [[Isaac-ROS-Object-Detection]], [[Isaac-ROS-cuMotion]], [[Isaac-ROS-nvblox]], [[Isaac-ROS-FoundationPose]], [[Isaac-ROS-FoundationStereo]], [[NVIDIA-Cosmos]], [[NIM-for-Cosmos-WFM]], [[NIM-for-Cosmos-Embed1]], [[NVIDIA-Jetson-Platform]], [[NVIDIA-Warp]], [[NVIDIA-Omniverse]], [[TensorRT]]
 **Sources:** https://developer.nvidia.com/isaac/, https://docs.isaacsim.omniverse.nvidia.com/latest/index.html, https://isaac-sim.github.io/IsaacLab/develop/index.html, https://nvidia-isaac-ros.github.io/, https://nvidia-isaac-ros.github.io/reference_workflows/isaac_for_manipulation/reference_architecture.html, https://nvidia-isaac-ros.github.io/reference_workflows/isaac_for_mobility/index.html, https://developer.nvidia.com/isaac/gr00t, https://docs.nvidia.com/nim/cosmos/latest/introduction.html, https://docs.nvidia.com/nim/cosmos-embed1/latest/introduction.html
-**Last Updated:** 2026-04-29
+**Last Updated:** 2026-05-15
 
 ## Summary
 NVIDIA Isaac is the umbrella robotics and physical AI platform spanning simulation, robot learning, ROS 2 acceleration, perception, manipulation, humanoid foundation models, and edge deployment. Its durable subtopics now include [[NVIDIA-Isaac-Sim]] for Omniverse-based robot simulation, [[NVIDIA-Isaac-Lab]] for robot learning, [[NVIDIA-Isaac-ROS]] for CUDA-accelerated ROS 2 packages, [[NVIDIA-Isaac-for-Manipulation]] for current robot-arm reference workflows, [[NVIDIA-Isaac-for-Mobility]] for current AMR mobility workflows, and [[NVIDIA-Isaac-GR00T]] for humanoid robot foundation models and data pipelines. Together, Isaac connects synthetic data, training, simulation validation, and deployment on [[NVIDIA-Jetson-Platform]] and other NVIDIA accelerated systems.
@@ -50,6 +50,7 @@ Isaac addresses the sim-to-real gap in robotics by combining photorealistic GPU 
 - ROS 2 (primary integration interface)
 
 ## Connections
+- [[NVIDIA-Newton]] - Newton integrates with Isaac Lab and Isaac Sim as a physics and camera-sensor backend for robot learning.
 - [[NVIDIA-Isaac-Sim]] - Omniverse-based simulator for robot development, synthetic data, and validation.
 - [[NVIDIA-Isaac-Lab]] - robot-learning layer for RL, imitation learning, and policy training.
 - [[NVIDIA-Isaac-ROS]] - deployment-side ROS 2 acceleration package family.

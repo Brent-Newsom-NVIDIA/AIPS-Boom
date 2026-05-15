@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "brent-newsom-nvidia.github.io/nvidia-cuda-wiki",
-    ignorePatterns: ["private", "templates", ".obsidian", "CLAUDE.md", "raw"],
+    ignorePatterns: ["private", "templates", ".obsidian", "AGENTS.md", "CLAUDE.md", "codex.md", "raw"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

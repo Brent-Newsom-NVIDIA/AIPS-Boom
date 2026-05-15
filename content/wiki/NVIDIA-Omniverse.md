@@ -2,9 +2,9 @@
 
 **Type:** Technology
 **Tags:** CUDA, NVIDIA, GPU, Simulation, 3D, USD, Digital Twin, Rendering, RTX, Collaboration
-**Related:** [[NVIDIA-Omniverse-Reference-Architectures]], [[NVIDIA-Isaac]], [[NVIDIA-Isaac-Sim]], [[NVIDIA-Isaac-Lab]], [[NVIDIA-Isaac-GR00T]], [[NVIDIA-Cosmos]], [[NIM-for-Cosmos-WFM]], [[NIM-for-Cosmos-Embed1]], [[NIM-for-Audio2Face-3D]], [[NIM-for-Maxine-Audio2Face-2D]], [[NVIDIA-ACE]], [[NVIDIA-DRIVE-Sim]], [[Earth-2]], [[NVIDIA-RTX-PRO-Server]], [[NVIDIA-RTX-PRO-AI-Factory]], [[NVIDIA-Warp]], [[NVIDIA-Modulus]], [[TensorRT]], [[PyTorch]]
+**Related:** [[NVIDIA-Newton]], [[NVIDIA-RTX]], [[NVIDIA-Omniverse-Reference-Architectures]], [[NVIDIA-Isaac]], [[NVIDIA-Isaac-Sim]], [[NVIDIA-Isaac-Lab]], [[NVIDIA-Isaac-GR00T]], [[NVIDIA-Cosmos]], [[NIM-for-Cosmos-WFM]], [[NIM-for-Cosmos-Embed1]], [[NIM-for-Audio2Face-3D]], [[NIM-for-Maxine-Audio2Face-2D]], [[NVIDIA-ACE]], [[NVIDIA-DRIVE-Sim]], [[Earth-2]], [[NVIDIA-RTX-PRO-Server]], [[NVIDIA-RTX-PRO-AI-Factory]], [[NVIDIA-Warp]], [[NVIDIA-Modulus]], [[TensorRT]], [[PyTorch]]
 **Sources:** NVIDIA official documentation, developer.nvidia.com/omniverse, https://www.nvidia.com/en-us/data-center/products/rtx-pro-server/, https://docs.omniverse.nvidia.com/arch-diagrams/latest/index.html, https://docs.omniverse.nvidia.com/arch-diagrams/latest/ref-arch-diagrams/factory-dt-diagram.html, https://docs.nvidia.com/nim/cosmos/latest/introduction.html, https://docs.nvidia.com/nim/digital-human/a2f-3d/latest/index.html
-**Last Updated:** 2026-04-29
+**Last Updated:** 2026-05-15
 
 ## Summary
 NVIDIA Omniverse is an open platform for building and operating real-time 3D simulation and collaboration applications, built on the OpenUSD (Universal Scene Description) standard. It provides a compute platform for developing industrial digital twins, physically accurate simulations, and robot/autonomous vehicle training environments through a suite of SDKs, renderers, and simulation engines. Omniverse serves as the foundation layer for [[NVIDIA-Isaac-Sim]] and the broader industrial AI simulation ecosystem.
@@ -52,6 +52,8 @@ Omniverse solves the challenge of collaborative, physically accurate 3D world si
 - USD Python API (`pxr` library)
 
 ## Connections
+- [[NVIDIA-Newton]] - Newton uses OpenUSD concepts that align with Omniverse and Isaac Sim scene composition workflows.
+- [[NVIDIA-RTX]] - Omniverse rendering depends on RTX ray tracing and path tracing capabilities.
 - [[NVIDIA-Omniverse-Reference-Architectures]] - current Omniverse architecture diagrams and technical requirements for industrial digital twins.
 - [[NVIDIA-Isaac]] — umbrella robotics platform that uses Omniverse through Isaac Sim
 - [[NVIDIA-Isaac-Sim]] — robotics simulation application built on Omniverse Kit, OpenUSD, RTX, and PhysX

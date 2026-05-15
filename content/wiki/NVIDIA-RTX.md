@@ -2,9 +2,9 @@
 
 **Type:** Technology
 **Tags:** NVIDIA, RTX, Ray Tracing, Real-Time Rendering, Tensor Cores, DXR, Vulkan, Gaming
-**Related:** [[NVIDIA-DLSS]], [[NVIDIA-Blackwell-Architecture]], [[NVIDIA-RTX-PRO-Server]], [[NVIDIA-Ada-Lovelace-Architecture]], [[NVIDIA-Turing-Architecture]], [[NVIDIA-CloudXR]], [[NVIDIA-Capture-SDK]], [[NVIDIA-AI-for-Media-SDKs]], [[NVIDIA-Omniverse]], [[TensorRT]], [[TensorRT-for-RTX]], [[Nsight-Graphics]], [[Nsight-Aftermath-SDK]], [[Nsight-Perf-SDK]]
-**Sources:** NVIDIA official documentation, https://www.nvidia.com/en-us/data-center/products/rtx-pro-server/, https://docs.nvidia.com/maxine/index.html, https://docs.nvidia.com/deeplearning/tensorrt-rtx/latest/index.html, https://developer.nvidia.com/nsight-graphics/get-started, https://developer.nvidia.com/nvidia-aftermath, https://developer.nvidia.com/nsight-perf-sdk
-**Last Updated:** 2026-04-29
+**Related:** [[NVIDIA-OptiX]], [[NVIDIA-DLSS]], [[NVIDIA-Blackwell-Architecture]], [[NVIDIA-RTX-PRO-Server]], [[NVIDIA-Ada-Lovelace-Architecture]], [[NVIDIA-Turing-Architecture]], [[NVIDIA-CloudXR]], [[NVIDIA-Capture-SDK]], [[NVIDIA-AI-for-Media-SDKs]], [[NVIDIA-Omniverse]], [[TensorRT]], [[TensorRT-for-RTX]], [[Nsight-Graphics]], [[Nsight-Aftermath-SDK]], [[Nsight-Perf-SDK]]
+**Sources:** NVIDIA official documentation, https://www.nvidia.com/en-us/data-center/products/rtx-pro-server/, https://docs.nvidia.com/maxine/index.html, https://docs.nvidia.com/deeplearning/tensorrt-rtx/latest/index.html, https://developer.nvidia.com/nsight-graphics/get-started, https://developer.nvidia.com/nvidia-aftermath, https://developer.nvidia.com/nsight-perf-sdk, https://developer.nvidia.com/rtx/ray-tracing/optix
+**Last Updated:** 2026-05-15
 
 ## Summary
 NVIDIA RTX is a platform encompassing hardware ray tracing, AI-accelerated rendering, and programmable shading on NVIDIA Turing and later GPU architectures. RTX introduces dedicated RT Cores for hardware-accelerated ray/triangle and ray/bounding-box intersection, Tensor Cores for AI tasks (DLSS, denoising, neural shaders), and Shader Execution Reordering (SER) for coherent ray traversal. The RTX brand covers both consumer GeForce RTX GPUs and professional RTX Ada Generation workstation GPUs, and is the foundation for NVIDIA's AI-on-RTX PC computing initiative.
@@ -39,16 +39,17 @@ Physically accurate lighting simulation (ray tracing) produces dramatically more
 - RT Cores available on: RTX 20, 30, 40, 50 (GeForce) and RTX A-series (Quadro)
 - Tensor Cores (for DLSS): same generations
 - Shader Execution Reordering: Ada Lovelace (RTX 40) and later
-- APIs: DirectX 12 Ultimate / DXR, Vulkan 1.2+ ray tracing extension, OptiX 8
+- APIs: DirectX 12 Ultimate / DXR, Vulkan 1.2+ ray tracing extension, NVIDIA OptiX
 
 ### Language Bindings / APIs
 - HLSL (DirectX Raytracing / DXR)
 - GLSL / SPIR-V (Vulkan Ray Tracing)
-- NVIDIA OptiX 8 (C++/CUDA for offline and scientific rendering)
+- NVIDIA OptiX (C++/CUDA for offline, scientific, visualization, and simulation ray tracing)
 - NVIDIA RTXGI (Global Illumination SDK), RTXDI (Direct Illumination SDK)
 - Unreal Engine 5 Lumen/Path Tracing / Unity HDRP
 
 ## Connections
+- [[NVIDIA-OptiX]] - OptiX is NVIDIA's CUDA-oriented ray tracing SDK and application framework for RTX-class GPUs.
 - [[NVIDIA-DLSS]] — DLSS is the primary AI rendering technology in the RTX platform
 - [[NVIDIA-Blackwell-Architecture]] — Blackwell adds Neural Shaders, DMM, and DLSS 4 to RTX
 - [[NVIDIA-RTX-PRO-Server]] — enterprise server platform for RTX PRO Blackwell AI, rendering, simulation, and visualization workloads.

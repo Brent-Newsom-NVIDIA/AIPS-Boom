@@ -2,9 +2,9 @@
 
 **Type:** Technology
 **Tags:** CUDA, NVIDIA, GPU, Python, Physics Simulation, Differentiable Programming, Open Source, Robotics
-**Related:** [[NVIDIA-Isaac-Lab]], [[NVIDIA-Isaac-Sim]], [[NVIDIA-Omniverse]], [[cuBLAS]], [[cuSPARSE]], [[cuDNN]], [[CUTLASS]]
+**Related:** [[NVIDIA-Newton]], [[NVIDIA-Isaac]], [[NVIDIA-Isaac-Lab]], [[NVIDIA-Isaac-Sim]], [[NVIDIA-Omniverse]], [[cuBLAS]], [[cuSPARSE]], [[cuDNN]], [[CUTLASS]]
 **Sources:** NVIDIA official documentation
-**Last Updated:** 2026-04-09
+**Last Updated:** 2026-05-15
 
 ## Summary
 NVIDIA Warp is an open-source Python framework for GPU-accelerated computational physics, AI simulation, and optimization workflows. It JIT-compiles Python functions to CUDA kernels, supports differentiable (reverse-mode) simulation for gradient-based optimization, and provides native geometry primitives (meshes, sparse volumes, BVH). Warp delivers simulation performance on par with native CUDA code while maintaining Python developer productivity, and integrates with PyTorch, JAX, PhysicsNeMo, and NVIDIA Omniverse.
@@ -45,6 +45,8 @@ Physics simulation, robotics, and CAE workloads require GPU-accelerated computat
 - CUDA (generated output from JIT compilation)
 
 ## Connections
+- [[NVIDIA-Newton]] - Newton is built on Warp for GPU-accelerated robotics physics and differentiable simulation.
+- [[NVIDIA-Isaac]] - Isaac Lab and Isaac Sim connect Warp-powered simulation components into robot learning workflows.
 - [[NVIDIA-Isaac-Lab]] - Isaac Lab development docs describe Newton/Warp-oriented backend and renderer paths for robot learning.
 - [[NVIDIA-Isaac-Sim]] - adjacent high-fidelity simulation environment in the Isaac robotics stack.
 - [[NVIDIA-Omniverse]] - Warp integrates with Omniverse simulation and physical AI workflows.
